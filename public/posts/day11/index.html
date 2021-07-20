@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>21 June 2021</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+<meta property="og:title" content="21 June 2021" />
+<meta property="og:description" content="Introduction to Sample Post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://satwikvats.github.io/posts/day11/" />
+<meta property="article:published_time" content="2020-06-08T08:06:25+06:00" />
+<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00" />
+
+
+    
+    
+<meta name="description" content="Introduction to Sample Post" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      Satwik&#39;s PS1 Journey</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/day-1/" title="Introduction">Introduction</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://satwikvats.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/default-avatar_hu9bf48a08e17db6472c2e32b73058a6bb_47653_120x120_fit_box_2.png' alt="Author Image">
+          <h5 class="author-name"></h5>
+          <p>June 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>21 June 2021</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <ul>
+<li>
+<p>Installed Terraform on terminal, following the steps in the given doc-
+<a href="https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started">Step-by-step guide on Terraform installation</a>
+<script src="https://asciinema.org/a/EQbv1VTWDamOOS6IhWEvcyf2y.js" id="asciicast-EQbv1VTWDamOOS6IhWEvcyf2y" async></script>
+</p>
+</li>
+<li>
+<p>Made a Docker container out of Terraform and locally hosted the Nginx image.</p>
+<ul>
+<li>Created a new directory.</li>
+<li>Initialized Terraform in it by using <code>terraform init</code> command.</li>
+<li>Created main.tf file. Specified resources and providers there.</li>
+<li>Finally ran the image on LocalHost:8000
+<img src="/posts/day11/nginxsiteterraform.PNG" alt="Nginx Image hosted using Terraform"></li>
+<li>Learnt some of the basic Terraform commands like <code>plan</code>, <code>apply</code> , <code>destroy</code> along the way.
+<ul>
+<li><code>plan</code> does a dry run of your configuration and tell you what all chanes would be applied once you use <code>terraform apply</code>.</li>
+<li><code>apply</code> deploys the changes according to final state of main.tf file, compared to earlier changes.</li>
+<li><code>destroy</code> destroys the whole infrastructure created till the point.</li>
+<li>Got a basic understanding of how declarative mode of programming works.
+<script src="https://asciinema.org/a/GYxglIjUsJDgQxNLfIZqNXxp0.js" id="asciicast-GYxglIjUsJDgQxNLfIZqNXxp0" async></script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Installed Terraform extension on my Visual Studio code as well.</p>
+</li>
+<li>
+<p>Made an AWS account alongside exploring AWSEducate portal.
+<a href="https://aws.amazon.com/education/awseducate/">AWS Educate</a></p>
+</li>
+<li>
+<p>Tried building AWS Cloud Infrastructure using Terraform.</p>
+<ul>
+<li>Created a new directory.</li>
+<li>Initialize Terraform in it by using <code>terraform init</code> command.</li>
+<li>Created main.tf file and specified provider and region. In this case, provider is <code>aws</code>, and the region is <code>ap-south-1</code>(Mumbai).
+<ul>
+<li><code>provider &quot;aws&quot; {  region = &quot;ap-south-1&quot;  }</code>
+<script src="https://asciinema.org/a/kySBeoFxTnA8xrvXOTDpt0fl0.js" id="asciicast-kySBeoFxTnA8xrvXOTDpt0fl0" async></script>
+</li>
+</ul>
+</li>
+<li>Created security credentials(access key and secret key) on the AWS management console and fetched it for main.tf.
+<script src="https://asciinema.org/a/D2UDgjNPeDiAw7yxqBgAoXw9G.js" id="asciicast-D2UDgjNPeDiAw7yxqBgAoXw9G" async></script>
+</li>
+</ul>
+</li>
+<li>
+<p>References:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=6RAQynw2Sy8">Understanding declarative and imperative programming</a></li>
+<li><a href="https://www.youtube.com/watch?v=SLB_c_ayRMo">Automate your AWS Cloud Infrastructure using Terraform, right from scratch</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/day11/index.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+      
+  
+
+
+
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+                </li>
+              
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2020 Copyright.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

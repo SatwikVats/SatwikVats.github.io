@@ -1,0 +1,21 @@
+designation = "B.E (Electronics & Instrumentation)"
+resume = "files/resume.pdf"
+summary = "I am a sophomore, pursuing my Bachelor's Degree in Electronics & Instrumentation at BITS Pilani, Pilani campus. A curious mind always willing to learn and acquire new skills, I aspire to become a software developer one day."
+
+[section]
+name = "About"
+id = "about"
+enable = true
+weight = 1
+showOnNavbar = true
+template = "sections/about.html"
+
+[company]
+name = "Birla Institute of Technology & Science"
+url = "https://www.bits-pilani.ac.in/"
+
+[[socialLinks]]
+name = "Github"
+icon = "fab fa-github"
+url = "https://www.github.com/SatwikVats"
+

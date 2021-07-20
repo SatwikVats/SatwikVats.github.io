@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6 July 2021</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+<meta property="og:title" content="6 July 2021" />
+<meta property="og:description" content="Introduction to Sample Post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://satwikvats.github.io/posts/day22/" />
+<meta property="article:published_time" content="2020-06-08T08:06:25+06:00" />
+<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00" />
+
+
+    
+    
+<meta name="description" content="Introduction to Sample Post" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      Satwik&#39;s PS1 Journey</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/day-1/" title="Introduction">Introduction</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://satwikvats.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/default-avatar_hu9bf48a08e17db6472c2e32b73058a6bb_47653_120x120_fit_box_2.png' alt="Author Image">
+          <h5 class="author-name"></h5>
+          <p>June 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>6 July 2021</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <ul>
+<li>
+<p>Attempted deploying Kubernetes cluster by following this <a href="https://www.youtube.com/watch?v=vpEDUmt_WKA">tutorial</a>.</p>
+<ul>
+<li>
+<p>Created three VMs to be used as nodes- One Matser, Two Slaves.</p>
+</li>
+<li>
+<p>Started off by installing packages on the Master Node.</p>
+<ul>
+<li>Installed Docker. Referred to <a href="https://docs.docker.com/engine/install/ubuntu/">official documentation</a> for the same.
+<pre><code>#Importing some necessary certificates.
+sudo apt-get install \ 
+&gt;     apt-transport-https \ 
+&gt;     ca-certificates \ 
+&gt;     curl \ 
+&gt;     gnupg \ 
+&gt;     lsb-release
+      
+sudo apt  install docker.io  # version 20.10.2-0ubu
+      
+docker --version
+      
+</code></pre></li>
+<li>Imported a gtg key.
+<pre><code>sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo &quot;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&quot; | sudo tee/etc/apt/sources.list.d/kubernetes.list
+      
+</code></pre></li>
+<li>Installed kubelet, kubeadm and kubectl.
+<pre><code>sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+      
+</code></pre></li>
+<li>Enabled the use of IP-tables.
+<pre><code>echo &quot;net.bridge.bridge-nf-call-iptables=1&quot; | sudo tee -a /etc/sysctl.conf 
+sudo sysctl -p
+      
+</code></pre><script src="https://asciinema.org/a/VXnh3KJmjMsIAlnkrp3Cx80XB.js" id="asciicast-VXnh3KJmjMsIAlnkrp3Cx80XB" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>Repeated the same process for Worker Nodes one and two.
+<script src="https://asciinema.org/a/aw3qRrxiRGhWODfrDoIf4eAkK.js" id="asciicast-aw3qRrxiRGhWODfrDoIf4eAkK" async></script>
+</p>
+</li>
+<li>
+<p>Since the nodes were ready with all the required packages, attempted to initialize the cluster.</p>
+</li>
+<li>
+<p>Failed since the RAM of Master node was less than the required 1700 MB.</p>
+<pre><code>sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+    
+</code></pre><script src="https://asciinema.org/a/0dntls4e0TOs8mWyouz39LAcW.js" id="asciicast-0dntls4e0TOs8mWyouz39LAcW" async></script>
+
+</li>
+<li>
+<p>Teminated the Master Node with instance-type <code>t2.micro</code> and created a new one with type as <code>t2.medium</code>.</p>
+</li>
+<li>
+<p>Repeated the process all over for the VM with improved RAM.
+<script src="https://asciinema.org/a/RQNLMi8iHVYwf4nG9MLx8rOB3.js" id="asciicast-RQNLMi8iHVYwf4nG9MLx8rOB3" async></script>
+</p>
+</li>
+<li>
+<p>Successfully initialized cluster in the Master Node this time.</p>
+<pre><code>#Initializing the cluster.
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+    
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    
+#Created a security policy for pods.
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+    
+</code></pre></li>
+<li>
+<p>Nodes can be viewed using th following command.</p>
+<pre><code>kubectl get nodes
+    
+#Watch allows you to automatically repeat a command. It keeps refreshing the node-list every 2 secs.
+watch kubectl get nodes
+    
+</code></pre><script src="https://asciinema.org/a/0HuQ5afgqCQWsznuaTZkZJZfk.js" id="asciicast-0HuQ5afgqCQWsznuaTZkZJZfk" async></script>
+
+</li>
+<li>
+<p>Tried attaching Worker Node 1 to cluster, but failed.</p>
+<pre><code>sudo kubeadm join 172.31.37.108:6443 --token y5zv1x.8sr3g843mgi3gj72 \ 
+&gt; --discovery-token-ca-cert-hash sha256:b789f80fbcd5b2c6b6b6f795e648ec3b27aa1052652edfc712dbaecf6070050e 
+    
+</code></pre><script src="https://asciinema.org/a/RDDR2gWYaPalwFjHMERWeO1g8.js" id="asciicast-RDDR2gWYaPalwFjHMERWeO1g8" async></script>
+
+</li>
+<li>
+<p>Tried the same for Worker Node 2, but a different error showed up this time.
+<script src="https://asciinema.org/a/dDmP5cY12UQLzCMvZ8OqJ97lc.js" id="asciicast-dDmP5cY12UQLzCMvZ8OqJ97lc" async></script>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>References</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=vpEDUmt_WKA">Deploy Kubernetes from scratch</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/day22/index.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+      
+  
+
+
+
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+                </li>
+              
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2020 Copyright.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
