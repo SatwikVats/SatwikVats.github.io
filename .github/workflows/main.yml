@@ -23,12 +23,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
         with:
-          personal_token: ${{ secrets.GITHUBACTIONSHUGOSITETOKEN }}
-          external_repository: SatwikVats/SatwikVats.github.io
+          github_token: ${{ secrets.GITHUBACTIONSHUGOSITETOKEN }}
           publish_dir: ./public
-          #   keep_files: true
-          user_name: SatwikVats
-          user_email: <username@email.com>
-          publish_branch: master
-        #   cname: example.com
