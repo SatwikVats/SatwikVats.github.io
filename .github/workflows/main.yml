@@ -24,7 +24,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{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}}
+         # personal_token: ${{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}}
           external_repository: SatwikVats/SatwikVats.github.io
           publish_dir: ./public
           #   keep_files: true
