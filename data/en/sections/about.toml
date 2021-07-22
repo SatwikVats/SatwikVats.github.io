@@ -15,7 +15,39 @@ name = "Birla Institute of Technology & Science"
 url = "https://www.bits-pilani.ac.in/"
 
 [[socialLinks]]
+name = "Email"
+icon = "fas fa-envelope"
+url = "vats.satwik@gmail.com"
+
+[[socialLinks]]
 name = "Github"
 icon = "fab fa-github"
 url = "https://www.github.com/SatwikVats"
+
+[[socialLinks]]
+name = "LinkedIn"
+icon = "fab fa-linkedin"
+url = "https://www.linkedin.com/in/satwikvats"
+
+[[softSkills]]
+name = "Leadership"
+percentage = 80
+color = "blue"
+
+[[softSkills]]
+name = "Team Work"
+percentage = 85
+color = "yellow"
+
+[[softSkills]]
+name = "Communication"
+percentage = 85
+color = "pink"
+
+[[softSkills]]
+name = "Hard Working"
+percentage = 80
+color = "green"
+
+
 
