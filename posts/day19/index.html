@@ -1,22 +1,417 @@
-<!doctype html><html><head><title>1 July 2021</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><link rel=stylesheet href=/css/bootstrap.min.css><link rel=stylesheet href=/css/layouts/main.css><link rel=stylesheet href=/css/navigators/navbar.css><link rel=stylesheet href=/css/plyr.css><link rel=stylesheet href=/css/flag-icon.min.css><link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css><meta property="og:title" content="1 July 2021"><meta property="og:description" content="Introduction to Sample Post"><meta property="og:type" content="article"><meta property="og:url" content="https://satwikvats.github.io/posts/day19/"><meta property="article:published_time" content="2020-06-08T08:06:25+06:00"><meta property="article:modified_time" content="2020-06-08T08:06:25+06:00"><meta name=description content="Introduction to Sample Post"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css><link rel=stylesheet href=/css/layouts/single.css><link rel=stylesheet href=/css/navigators/sidebar.css><link rel=stylesheet href=/css/style.css></head><body data-spy=scroll data-target=#TableOfContents data-offset=80><div class="container-fluid bg-dimmed wrapper"><nav class="navbar navbar-expand-xl top-navbar final-navbar shadow"><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
-<span class=navbar-toggler-icon></span></button>
-<a class=navbar-brand href=/>Satwik's PS1 Journey</a>
-<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
-<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse lang-selector" id=top-nav-items><ul class="navbar-nav ml-auto"></ul></div></div></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><a class=active href=/posts/day-1/ title=Introduction>Introduction</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://satwikvats.github.io/images/default-hero.jpg)></div><div class=page-content><div class="author-profile ml-auto align-self-lg-center"><img class=rounded-circle src=/images/default-avatar_hu1b14593c51b09e0fcd18693678a8f4ed_42371_120x120_fit_box_2.png alt="Author Image"><h5 class=author-name></h5><p>June 8, 2020</p></div><div class=title><h1>1 July 2021</h1></div><div class=post-content id=post-content><ul><li><p>Experimentation with various AWS resources using CLI.</p><ul><li><p>Created a VPC.</p><pre><code>aws ec2 create-vpc --cidr-block 10.10.1.0/24
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1 July 2021</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+<meta property="og:title" content="1 July 2021" />
+<meta property="og:description" content="Introduction to Sample Post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://satwikvats.github.io/posts/day19/" />
+<meta property="article:published_time" content="2020-06-08T08:06:25+06:00" />
+<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00" />
+
+
     
-</code></pre></li><li><p>Attempted making a subnet linked to that VPC, but failed since the CIDR turned out to be invalid.</p><pre><code>aws ec2 create-subnet --vpc-id vpc-0fd87e36fb326f175 --cidr-block 10.10.1.0/16
     
-</code></pre><script src=https://asciinema.org/a/Qq4NnuOFLvJnYm74qgaCz620K.js id=asciicast-Qq4NnuOFLvJnYm74qgaCz620K async></script></li><li><p>Created Internet Gateway and attached it to a VPC.</p><pre><code>aws ec2 create-internet-gateway
+<meta name="description" content="Introduction to Sample Post" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      Satwik&#39;s PS1 Journey</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/day-1/" title="Introduction">Introduction</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://satwikvats.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/default-avatar_hu9bf48a08e17db6472c2e32b73058a6bb_47653_120x120_fit_box_2.png' alt="Author Image">
+          <h5 class="author-name"></h5>
+          <p>June 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>1 July 2021</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <ul>
+<li>
+<p>Experimentation with various AWS resources using CLI.</p>
+<ul>
+<li>
+<p>Created a VPC.</p>
+<pre><code>aws ec2 create-vpc --cidr-block 10.10.1.0/24
+    
+</code></pre></li>
+<li>
+<p>Attempted making a subnet linked to that VPC, but failed since the CIDR turned out to be invalid.</p>
+<pre><code>aws ec2 create-subnet --vpc-id vpc-0fd87e36fb326f175 --cidr-block 10.10.1.0/16
+    
+</code></pre><script src="https://asciinema.org/a/Qq4NnuOFLvJnYm74qgaCz620K.js" id="asciicast-Qq4NnuOFLvJnYm74qgaCz620K" async></script>
+
+</li>
+<li>
+<p>Created Internet Gateway and attached it to a VPC.</p>
+<pre><code>aws ec2 create-internet-gateway
 aws ec2 attach-internet-gateway --vpc-id vpc-0fd87e36fb326f175 --internet-gateway-id igw-0f75ad3c966f9bb6b
     
-</code></pre></li><li><p>Created a route-table and linked the route to the gateway as well.</p><pre><code>aws ec2 create-route-table --vpc-id vpc-0fd87e36fb326f175
+</code></pre></li>
+<li>
+<p>Created a route-table and linked the route to the gateway as well.</p>
+<pre><code>aws ec2 create-route-table --vpc-id vpc-0fd87e36fb326f175
 aws ec2 create-route --route-table-id rtb-060a13637f368b43d --destination-cidr-block 0.0.0.0/0 --gateway-id igw-0f75ad3c966f9bb6b
     
-</code></pre><script src=https://asciinema.org/a/A7X1IVDcaNqgmdsyKSSMw5sOQ.js id=asciicast-A7X1IVDcaNqgmdsyKSSMw5sOQ async></script></li><li><p>Tried changing IP of VPC, but realised that I was using <code>modify</code> command in an improper way.
-<script src=https://asciinema.org/a/fwpBqBOB1TZeBhIDF6b8yx57W.js id=asciicast-fwpBqBOB1TZeBhIDF6b8yx57W async></script></p></li><li><p>Managed to create a subnet after associating a secondary cidr block with new IP range.</p><pre><code>aws ec2 create-subnet --vpc-id vpc-0fd87e36fb326f175 --cidr-block 10.0.1.0/16
+</code></pre><script src="https://asciinema.org/a/A7X1IVDcaNqgmdsyKSSMw5sOQ.js" id="asciicast-A7X1IVDcaNqgmdsyKSSMw5sOQ" async></script>
+
+</li>
+<li>
+<p>Tried changing IP of VPC, but realised that I was using <code>modify</code> command in an improper way.
+<script src="https://asciinema.org/a/fwpBqBOB1TZeBhIDF6b8yx57W.js" id="asciicast-fwpBqBOB1TZeBhIDF6b8yx57W" async></script>
+</p>
+</li>
+<li>
+<p>Managed to create a subnet after associating a secondary cidr block with new IP range.</p>
+<pre><code>aws ec2 create-subnet --vpc-id vpc-0fd87e36fb326f175 --cidr-block 10.0.1.0/16
     
-</code></pre><script src=https://asciinema.org/a/91nMiwoaR0NH3P0YJ2IZDpPKB.js id=asciicast-91nMiwoaR0NH3P0YJ2IZDpPKB async></script></li></ul></li><li><p>IP address are 32 bits represented by 4 integers separated by &ldquo;.&rdquo; Each integer ranges from 0 to 255. /16 implies only first 16 bits are required rest are part of the subnet.</p></li><li><p>Terminated an instance created previously.</p><pre><code>aws ec2 terminate-instance --instance-id i-08431b825258399a3
+</code></pre><script src="https://asciinema.org/a/91nMiwoaR0NH3P0YJ2IZDpPKB.js" id="asciicast-91nMiwoaR0NH3P0YJ2IZDpPKB" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>IP address are 32 bits represented by 4 integers separated by &ldquo;.&rdquo; Each integer ranges from 0 to 255. /16 implies only first 16 bits are required rest are part of the subnet.</p>
+</li>
+<li>
+<p>Terminated an instance created previously.</p>
+<pre><code>aws ec2 terminate-instance --instance-id i-08431b825258399a3
   
-</code></pre><script src=https://asciinema.org/a/gqo6TMWfbeUhYWBL3o1Ga5V12.js id=asciicast-gqo6TMWfbeUhYWBL3o1Ga5V12 async></script></li><li><p>Spent some time on learning about Kubernetes.</p><ul><li>Its utility as a Container Management Tool.</li><li>Procedure of installation via three nodes- one master along with two slave nodes.</li></ul></li><li><p>References-</p><ul><li><a href="https://www.youtube.com/watch?v=l_lWfipUimk">Kubernetes for beginners</a></li></ul></li></ul></div><div class=btn-improve-page><a href=https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/day19/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>Improve this page</a></div><hr><div class="row next-prev-navigator"></div><hr></div></div></div><a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center pl-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents></nav></div></div></section></div><footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-left"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=/#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul></ul></div></div></div><hr><div class=container><div class="row text-left"><div class=col-md-4><a id=theme href=https://github.com/hossainemruz/toha target=_blank rel=noopener><img src=/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png alt="Toha Theme Logo">
-Toha</a></div><div class="col-md-4 text-center">© 2020 Copyright.</div><div class="col-md-4 text-right"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
-<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script type=text/javascript src=/js/jquery-3.4.1.min.js></script><script type=text/javascript src=/js/popper.min.js></script><script type=text/javascript src=/js/bootstrap.min.js></script><script type=text/javascript src=/js/navbar.js></script><script type=text/javascript src=/js/plyr.js></script><script type=text/javascript src=/js/main.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script><script src=/js/single.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre><script src="https://asciinema.org/a/gqo6TMWfbeUhYWBL3o1Ga5V12.js" id="asciicast-gqo6TMWfbeUhYWBL3o1Ga5V12" async></script>
+
+</li>
+<li>
+<p>Spent some time on learning about Kubernetes.</p>
+<ul>
+<li>Its utility as a Container Management Tool.</li>
+<li>Procedure of installation via three nodes- one master along with two slave nodes.</li>
+</ul>
+</li>
+<li>
+<p>References-</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=l_lWfipUimk">Kubernetes for beginners</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/day19/index.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+      
+  
+
+
+
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+                </li>
+              
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2020 Copyright.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

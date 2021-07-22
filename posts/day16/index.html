@@ -1,10 +1,176 @@
-<!doctype html><html><head><title>28 June 2021</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><link rel=stylesheet href=/css/bootstrap.min.css><link rel=stylesheet href=/css/layouts/main.css><link rel=stylesheet href=/css/navigators/navbar.css><link rel=stylesheet href=/css/plyr.css><link rel=stylesheet href=/css/flag-icon.min.css><link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css><meta property="og:title" content="28 June 2021"><meta property="og:description" content="Introduction to Sample Post"><meta property="og:type" content="article"><meta property="og:url" content="https://satwikvats.github.io/posts/day16/"><meta property="article:published_time" content="2020-06-08T08:06:25+06:00"><meta property="article:modified_time" content="2020-06-08T08:06:25+06:00"><meta name=description content="Introduction to Sample Post"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css><link rel=stylesheet href=/css/layouts/single.css><link rel=stylesheet href=/css/navigators/sidebar.css><link rel=stylesheet href=/css/style.css></head><body data-spy=scroll data-target=#TableOfContents data-offset=80><div class="container-fluid bg-dimmed wrapper"><nav class="navbar navbar-expand-xl top-navbar final-navbar shadow"><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
-<span class=navbar-toggler-icon></span></button>
-<a class=navbar-brand href=/>Satwik's PS1 Journey</a>
-<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
-<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse lang-selector" id=top-nav-items><ul class="navbar-nav ml-auto"></ul></div></div></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><a class=active href=/posts/day-1/ title=Introduction>Introduction</a></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://satwikvats.github.io/images/default-hero.jpg)></div><div class=page-content><div class="author-profile ml-auto align-self-lg-center"><img class=rounded-circle src=/images/default-avatar_hu1b14593c51b09e0fcd18693678a8f4ed_42371_120x120_fit_box_2.png alt="Author Image"><h5 class=author-name></h5><p>June 8, 2020</p></div><div class=title><h1>28 June 2021</h1></div><div class=post-content id=post-content><ul><li><p>An attempt to deploy a VM as an IAM user.</p><ul><li><p>Created a directory and initialized Terraform in it.
-<script src=https://asciinema.org/a/45q0k5gvvUmmZrHv3ccpPjxJZ.js id=asciicast-45q0k5gvvUmmZrHv3ccpPjxJZ async></script></p></li><li><p>Installed AWS CLI package whic is required for using <code>aws</code> commands.</p></li><li><p>Used <code>aws configure</code> to provide necessary fields like Access Key ID, Secret Access Key, Default Region and Default Output Format.
-<script src=https://asciinema.org/a/YrDwVH8WqTOOt5lLNx6tmSjxo.js id=asciicast-YrDwVH8WqTOOt5lLNx6tmSjxo async></script></p></li><li><p>Though, the since the credentials were revoked, it didn&rsquo;t work out.</p></li></ul></li><li><p>Started making my own web-server using Terraform.</p><ul><li><p>Defined the required resources listed as follows.</p><pre><code>provider &quot;aws&quot; {
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>28 June 2021</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+<meta property="og:title" content="28 June 2021" />
+<meta property="og:description" content="Introduction to Sample Post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://satwikvats.github.io/posts/day16/" />
+<meta property="article:published_time" content="2020-06-08T08:06:25+06:00" />
+<meta property="article:modified_time" content="2020-06-08T08:06:25+06:00" />
+
+
+    
+    
+<meta name="description" content="Introduction to Sample Post" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      Satwik&#39;s PS1 Journey</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/day-1/" title="Introduction">Introduction</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://satwikvats.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/default-avatar_hu9bf48a08e17db6472c2e32b73058a6bb_47653_120x120_fit_box_2.png' alt="Author Image">
+          <h5 class="author-name"></h5>
+          <p>June 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>28 June 2021</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <ul>
+<li>
+<p>An attempt to deploy a VM as an IAM user.</p>
+<ul>
+<li>
+<p>Created a directory and initialized Terraform in it.
+<script src="https://asciinema.org/a/45q0k5gvvUmmZrHv3ccpPjxJZ.js" id="asciicast-45q0k5gvvUmmZrHv3ccpPjxJZ" async></script>
+</p>
+</li>
+<li>
+<p>Installed AWS CLI package whic is required for using <code>aws</code> commands.</p>
+</li>
+<li>
+<p>Used <code>aws configure</code> to provide necessary fields like Access Key ID, Secret Access Key, Default Region and Default Output Format.
+<script src="https://asciinema.org/a/YrDwVH8WqTOOt5lLNx6tmSjxo.js" id="asciicast-YrDwVH8WqTOOt5lLNx6tmSjxo" async></script>
+</p>
+</li>
+<li>
+<p>Though, the since the credentials were revoked, it didn&rsquo;t work out.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Started making my own web-server using Terraform.</p>
+<ul>
+<li>
+<p>Defined the required resources listed as follows.</p>
+<pre><code>provider &quot;aws&quot; {
 region  = &quot;ap-south-1&quot;
 access_key = &quot;AKIAZNAFREL3FOSYINVD&quot;
 secret_key = &quot;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&quot;
@@ -119,7 +285,242 @@ network_interface_id = aws_network_interface.web-server-1.id
 }
 }
    
-</code></pre></li><li><p>Terminal recording for the same.
-<script src=https://asciinema.org/a/x7YDxkt9W9JkKfxz7pWNfrkOi.js id=asciicast-x7YDxkt9W9JkKfxz7pWNfrkOi async></script></p></li></ul></li><li><p>Few pointers to keep in mind.</p><ul><li><p>Specifying IP as 0.0.0.0/0 indicates that our traffic can go/come from any IP address on the internet.</p></li><li><p>We may assign multiple IPs for network interface.</p></li><li><p>We must use the same private ip for aws_eip, the one we used for network interface.</p></li><li><p>We must use the same availability zone for subnet as well as Ubuntu server.</p></li><li><p>An availability zone may have multiple data centres. In case of a failure, other would work fine and hence, it is advisable to hard-code the availability zone with data-centre.</p></li></ul></li><li><p>References-</p><ul><li><a href="https://www.youtube.com/watch?v=SLB_c_ayRMo&t=5847s">Automating your AWS Cloud Infrastructure</a></li></ul></li></ul></div><div class=btn-improve-page><a href=https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/day16/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>Improve this page</a></div><hr><div class="row next-prev-navigator"></div><hr></div></div></div><a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center pl-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents></nav></div></div></section></div><footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-left"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=/#recent-posts>Recent Posts</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul></ul></div></div></div><hr><div class=container><div class="row text-left"><div class=col-md-4><a id=theme href=https://github.com/hossainemruz/toha target=_blank rel=noopener><img src=/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png alt="Toha Theme Logo">
-Toha</a></div><div class="col-md-4 text-center">© 2020 Copyright.</div><div class="col-md-4 text-right"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
-<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script type=text/javascript src=/js/jquery-3.4.1.min.js></script><script type=text/javascript src=/js/popper.min.js></script><script type=text/javascript src=/js/bootstrap.min.js></script><script type=text/javascript src=/js/navbar.js></script><script type=text/javascript src=/js/plyr.js></script><script type=text/javascript src=/js/main.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script><script src=/js/single.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+</code></pre></li>
+<li>
+<p>Terminal recording for the same.
+<script src="https://asciinema.org/a/x7YDxkt9W9JkKfxz7pWNfrkOi.js" id="asciicast-x7YDxkt9W9JkKfxz7pWNfrkOi" async></script>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Few pointers to keep in mind.</p>
+<ul>
+<li>
+<p>Specifying IP as 0.0.0.0/0 indicates that our traffic can go/come from any IP address on the internet.</p>
+</li>
+<li>
+<p>We may assign multiple IPs for network interface.</p>
+</li>
+<li>
+<p>We must use the same private ip for aws_eip, the one we used for network interface.</p>
+</li>
+<li>
+<p>We must use the same availability zone for subnet as well as Ubuntu server.</p>
+</li>
+<li>
+<p>An availability zone may have multiple data centres. In case of a failure, other would work fine and hence, it is advisable to hard-code the availability zone with data-centre.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>References-</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=SLB_c_ayRMo&amp;t=5847s">Automating your AWS Cloud Infrastructure</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/day16/index.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+      
+  
+
+
+
+  
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+                </li>
+              
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hossainemruz/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_2.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2020 Copyright.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
