@@ -9,15 +9,30 @@ menu:
     weight: 10
 ---
 
-# Wanna launch your own website, but you aren't acquainted with HTML/CSS?Wordpress! Don't worry, Hugo has got you covered. It's a widely used framework for deploying a static site, where a set of themes are made availabe to the user for customization. Elaborate documentation further guide the user to make use of the theme in a better way. CI/CD tools further make it easy for the user to continuously push changes into the repository and update the site.
+Wanna launch your own website, but you aren't acquainted with HTML/CSS?Wordpress! Don't worry, Hugo has got you covered. It's a widely used framework for deploying a static site, where a set of themes are made availabe to the user for customization. Elaborate documentation further guide the user to make use of the theme in a better way. CI/CD tools further make it easy for the user to continuously push changes into the repository and update the site.
 
-## Installing Hugo on your Linux Setup.
+## Installing Hugo on Linux.
 
 ## Creating a new Hugo Site.
 
 Follow these steps to create your own Hugo Site.
 
+- Initializing a Hugo Site.
+
 {{<asciinema 3hNwm6KZqV8Duqtli0i9HwHv9>}}
+
+- Remotely adding to Github Repository.
+
+{{<asciinema 9xVaI78ItMng5RLAVxWC4YPIK>}}
+
+- Adding an appropriate theme to the site.
+
+{{<asciinema lzTv87ZZK3lBiXLmf2Y9fb5og>}}
+  
+- Setiing up the homepage with some relevant content.
+
+{{<asciinema P5ojQAdJKfVwp0AUd07C6Stgs>}}
+
 
 - Working with VM.
  
@@ -26,16 +41,3 @@ Follow these steps to create your own Hugo Site.
     aws ec2 create-tags --resource i-08431b825258399a3 --tags Key=Name,Value=SkvInstance
     
     ```
-  - Stopped the VM once I was done with my experimentation.
-    ```
-    aws ec2 stop-instances --instance-ids i-08431b825258399a3
-    
-    ```
-    {{<asciinema VMQMuurIEmpWMjYilA6kZMgTZ>}}
-    
-
-    ```
-
-
-
-# Test post
