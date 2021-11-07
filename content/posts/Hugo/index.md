@@ -13,6 +13,8 @@ Wanna launch your own website, but you aren't acquainted with HTML/CSS?Wordpress
 
 ## Installing Hugo on Linux.
 
+## Basic Hugo Commands.
+
 ## Creating a new Hugo Site.
 
 Follow these steps to create your own Hugo Site.
@@ -25,14 +27,23 @@ Follow these steps to create your own Hugo Site.
 
 {{<asciinema 9xVaI78ItMng5RLAVxWC4YPIK>}}
 
+## Customizing your Hugo Site.
+
 - Adding an appropriate theme to the site.
 
 {{<asciinema lzTv87ZZK3lBiXLmf2Y9fb5og>}}
+
+- Adding a post to the site.
+
+{{<asciinema S7O4pFNNbILFpk9FPv4Asr3cp>}}
   
 - Setiing up the homepage with some relevant content.
 
 {{<asciinema P5ojQAdJKfVwp0AUd07C6Stgs>}}
 
+## Hosting the Site locally.
+
+{{<asciinema 418763>}}
 
 - Working with VM.
  
