@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Satwik&#39;s PS1 Journey</title>
+    <title>Categories on Know me better..</title>
     <link>https://satwikvats.github.io/categories/</link>
-    <description>Recent content in Categories on Satwik&#39;s PS1 Journey</description>
+    <description>Recent content in Categories on Know me better..</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://satwikvats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://satwikvats.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
