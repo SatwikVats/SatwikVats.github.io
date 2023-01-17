@@ -34,6 +34,12 @@ params:
   gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
   gitBranch: main
 
+  #Dark theme
+  darkMode:
+    enable: true
+    provider: darkreader
+    default: system
+  
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
 
