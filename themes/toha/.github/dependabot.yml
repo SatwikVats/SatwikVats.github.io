@@ -1,7 +1,17 @@
 # Update dependencies
 
-version: 3.6.0
+version: 2
 updates:
+
+# Update the git submodules
+- package-ecosystem: "gitsubmodule"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  labels:
+  - "dependencies"
+  - "automerge"
+  
 # Update the Github Action  versions
 - package-ecosystem: "github-actions"
   directory: "/"
