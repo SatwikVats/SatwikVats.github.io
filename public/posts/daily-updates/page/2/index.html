@@ -581,8 +581,8 @@ git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster  C
         <h5 class="card-title">Day 6</h5>
         <p class="card-text post-summary">Tried exploring Docker and Ansible technologies.
   Had a healthy group discussion with my friends on the same, where we shared our ideas on both the technologies mentioned above.Many of our misconceptions were cleared up, and we divided responsibilities amongst us.
-  Installed Docker package and engine on my system. Followed the official Docker documentation and a Youtube Tutorial
-  Firstly, attempted installing it through the repository method.</p>
+  Since the past few days, I have been trying to figure out how to enable full-screen display for my VM.
+ After several futile attempts of installing new ISOGuestAdditions and changing disc image, found a different method in a Youtube guide.</p>
       </div>
       <div class="card-footer">
         <span class="float-left">June 8, 2020</span>
@@ -640,9 +640,8 @@ git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster  C
         <p class="card-text post-summary">Installed VS code for my Linux VM.
   Downloaded the .deb file from Visual Studio official site.
   Installed it by running sudo dpkg -i code_1.57.0-1623259737_amd64.deb on terminal.   The VS application can be opened from terminal by using open code ..
-    Attempted locally hosting the docker image.
-  Created index.md and about.md files in a repository.
-  Used command docker run -d -p 8000:80 -v ~/nginxtrial:/usr/share/nginx/md --name trialsite nginx to run it.</p>
+    Working around with Ansible.
+  Checked Ansible version.   Install the net-tools package, which is necessary to run ifcongig command.</p>
       </div>
       <div class="card-footer">
         <span class="float-left">June 8, 2020</span>
@@ -667,10 +666,9 @@ git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster  C
       </div>
       <div class="card-body">
         <h5 class="card-title">Day 9</h5>
-        <p class="card-text post-summary">Making a Docker container for Hugo site by following a Youtube tutorial.
-  Made two directories namely ansible-build and docker-build in the Hugo repository. Shifted content of Hugo website to Docker-build.
-  Made a Dockerfile. Specified Nginx static file location and localhost ports in the file.
-  Built the Docker container and ran it. Failed in the earlier attempt since I forgot to make Dockerfile.</p>
+        <p class="card-text post-summary">Running Ansible tasks.
+  Made an Ansible Playbook inside the ansible-build directory and specified the tasks sequentially there. The required syntax for .yaml playbooks is as follows. name:hosts:tasks:   Ran the playbook using command ansible-playbook docker-image-playbook.yaml. Tasks getting executed can be seen here.
+  Ran the site locally but again, the theme was not getting rendered.     References-</p>
       </div>
       <div class="card-footer">
         <span class="float-left">June 8, 2020</span>

@@ -24,9 +24,8 @@
 <meta property="og:description" content="Installed VS code for my Linux VM.
   Downloaded the .deb file from Visual Studio official site.
   Installed it by running sudo dpkg -i code_1.57.0-1623259737_amd64.deb on terminal.   The VS application can be opened from terminal by using open code ..
-    Attempted locally hosting the docker image.
-  Created index.md and about.md files in a repository.
-  Used command docker run -d -p 8000:80 -v ~/nginxtrial:/usr/share/nginx/md --name trialsite nginx to run it." />
+    Working around with Ansible.
+  Checked Ansible version.   Install the net-tools package, which is necessary to run ifcongig command." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://satwikvats.github.io/posts/daily-updates/day8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-08T06:00:20&#43;06:00" />
@@ -445,30 +444,6 @@
 <p>The VS application can be opened from terminal by using <code>open code .</code>.</p>
 </li>
 </ul>
-</li>
-<li>
-<p>Attempted locally hosting the docker image.</p>
-<ul>
-<li>
-<p>Created <strong>index.md</strong> and <strong>about.md</strong> files in a repository.</p>
-</li>
-<li>
-<p>Used command <code>docker run -d -p 8000:80 -v ~/nginxtrial:/usr/share/nginx/md --name trialsite nginx</code> to run it. <strong>trialsite</strong> is the name of the image here.
-<script src="https://asciinema.org/a/4pyCCIfWy0E8boWjQhuVZ7oMe.js" id="asciicast-4pyCCIfWy0E8boWjQhuVZ7oMe" async></script>
-</p>
-</li>
-<li>
-<p>But when launched the docker container on port 8000, it displayed error 404:Not found.</p>
-</li>
-<li>
-<p>Repeated the same process, but with <strong>index.html</strong> and <strong>about.html</strong> files this time around and got the desired results.
-<script src="https://asciinema.org/a/uZD87ZEDJXD8dQUKDWgmIjgbd.js" id="asciicast-uZD87ZEDJXD8dQUKDWgmIjgbd" async></script>
-</p>
-</li>
-</ul>
-<p>-Tried tampering the <strong>about.html</strong> file and the changes were reflected on the server accordingly, on refreshing.
-<script src="https://asciinema.org/a/0ulPOVB0dSxqWewn5ypQFWbBt.js" id="asciicast-0ulPOVB0dSxqWewn5ypQFWbBt" async></script>
-</p>
 </li>
 <li>
 <p>Working around with Ansible.</p>

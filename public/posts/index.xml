@@ -209,7 +209,10 @@ Initial setup Search depends on additional output content type of JSON in config
       <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
       
       <guid>https://satwikvats.github.io/posts/docker/</guid>
-      <description>Docker Test post </description>
+      <description>Docker   Installed Docker package and engine on my system. Followed the official Docker documentation and a Youtube Tutorial
+  Firstly, attempted installing it through the repository method.
+ Made sure if there were any previously installed versions, got removed. Got updates. Installed the package. Added Docker&amp;rsquo;s official GPG key. Faced issues while installing the Docker engine.  
+  Second attempt to manually import Docker package and install it.</description>
     </item>
     
     <item>

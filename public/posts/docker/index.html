@@ -422,6 +422,142 @@
 
         <div class="post-content" id="post-content">
           <h1 id="docker">Docker</h1>
+<ul>
+<li>
+<p>Installed Docker package and engine on my system. Followed the official <a href="https://docs.docker.com/engine/install/ubuntu/#install-from-a-package">Docker documentation</a> and a <a href="https://www.youtube.com/watch?v=kkazBPHc4bk">Youtube Tutorial</a></p>
+<ul>
+<li>
+<p>Firstly, attempted installing it through the repository method.</p>
+<ul>
+<li>Made sure if there were any previously installed versions, got removed.</li>
+<li>Got updates.</li>
+<li>Installed the package.</li>
+<li>Added Docker&rsquo;s official GPG key.</li>
+<li>Faced issues while installing the Docker engine.</li>
+</ul>
+<p><a href="https://asciinema.org/a/Ok4K53fq62IgX0AtMhaGdIi6e"><img src="https://asciinema.org/a/Ok4K53fq62IgX0AtMhaGdIi6e.svg" alt="asciicast"></a></p>
+</li>
+<li>
+<p>Second attempt to manually import Docker package and install it.</p>
+<ul>
+<li>Checked Ubuntu version to find a corresponding Docker package from the given <a href="https://download.docker.com/linux/ubuntu/dists/focal/pool/stable/amd64/">link</a> and downloaded it.</li>
+<li>In this process, an error incurred while specifying the path of .deb file.</li>
+</ul>
+<p><a href="https://asciinema.org/a/vVCUkTw5A4sjRH3ZtGfcJQdhL"><img src="https://asciinema.org/a/vVCUkTw5A4sjRH3ZtGfcJQdhL.svg" alt="asciicast"></a>
+<a href="https://asciinema.org/a/0vXWajk8VrZBPZAaZMscWSpz2"><img src="https://asciinema.org/a/0vXWajk8VrZBPZAaZMscWSpz2.svg" alt="asciicast"></a></p>
+<ul>
+<li>Imported a missing Docker package, thus rectifying my previous mistake.</li>
+<li>Checked version.</li>
+<li>Made sure its working fine, by running a test image.</li>
+<li>Managed to successfully complete installation part.</li>
+</ul>
+<p><a href="https://asciinema.org/a/iIvMGkEjtXWVgAuYu3urg4DtG"><img src="https://asciinema.org/a/iIvMGkEjtXWVgAuYu3urg4DtG.svg" alt="asciicast"></a></p>
+</li>
+<li>
+<p>Checked whether Docker is actively running or not. Even tried running a test image.
+<a href="https://asciinema.org/a/5hufWQD6JLMrDivOjga5GALrQ"><img src="https://asciinema.org/a/5hufWQD6JLMrDivOjga5GALrQ.svg" alt="asciicast"></a></p>
+</li>
+<li>
+<p>GroupAdded Docker and added a user to avoid usage of sudo everytime, using command <strong>$sudo usermod -aG docker $USER</strong>.
+<a href="https://asciinema.org/a/pzzcJ4ayAUglUXLOHFxFpKbQK"><img src="https://asciinema.org/a/pzzcJ4ayAUglUXLOHFxFpKbQK.svg" alt="asciicast"></a></p>
+</li>
+<li>
+<p>Tried creating my first Docker container but failed, due to denial of some permissions.
+<a href="https://asciinema.org/a/UshelqIMVU9Wnu4FeHykHShiR"><img src="https://asciinema.org/a/UshelqIMVU9Wnu4FeHykHShiR.svg" alt="asciicast"></a></p>
+</li>
+<li>
+<p>Tried pulling Nginx image, but failed due to lack of storage. My Asciinema recording stopped abruptly due to the same.
+<a href="https://asciinema.org/a/uyUyl1VTwIHVl0asDS7U1Uj0X"><img src="https://asciinema.org/a/uyUyl1VTwIHVl0asDS7U1Uj0X.svg" alt="asciicast"></a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Working with containers.</p>
+<ul>
+<li>
+<p>Successfully pulled Nginx Image.</p>
+</li>
+<li>
+<p>Got to know how to check the status of containers whether they are active or running.
+<strong>docker ps</strong> command for the list of active running containers.
+<strong>docker ps -a</strong> command for the list of stopped containers.</p>
+</li>
+<li>
+<p>Locally hosted the Nginx Image.
+![Nginx image locally hosted.](/posts/Daily Updates/nginxtrialsitessday7.png)</p>
+</li>
+<li>
+<p>Learnt how to remove a stopped container by using <strong>docker rm <!-- raw HTML omitted --></strong> command.</p>
+</li>
+</ul>
+<p><a href="https://asciinema.org/a/qy4mU0eJnRxHp1HaZmOUALSKB"><img src="https://asciinema.org/a/qy4mU0eJnRxHp1HaZmOUALSKB.svg" alt="asciicast"></a></p>
+</li>
+<li>
+<p>Attempted locally hosting the docker image.</p>
+<ul>
+<li>
+<p>Created <strong>index.md</strong> and <strong>about.md</strong> files in a repository.</p>
+</li>
+<li>
+<p>Used command <code>docker run -d -p 8000:80 -v ~/nginxtrial:/usr/share/nginx/md --name trialsite nginx</code> to run it. <strong>trialsite</strong> is the name of the image here.
+<script src="https://asciinema.org/a/4pyCCIfWy0E8boWjQhuVZ7oMe.js" id="asciicast-4pyCCIfWy0E8boWjQhuVZ7oMe" async></script>
+</p>
+</li>
+<li>
+<p>But when launched the docker container on port 8000, it displayed error 404:Not found.</p>
+</li>
+<li>
+<p>Repeated the same process, but with <strong>index.html</strong> and <strong>about.html</strong> files this time around and got the desired results.
+<script src="https://asciinema.org/a/uZD87ZEDJXD8dQUKDWgmIjgbd.js" id="asciicast-uZD87ZEDJXD8dQUKDWgmIjgbd" async></script>
+</p>
+</li>
+</ul>
+<p>-Tried tampering the <strong>about.html</strong> file and the changes were reflected on the server accordingly, on refreshing.
+<script src="https://asciinema.org/a/0ulPOVB0dSxqWewn5ypQFWbBt.js" id="asciicast-0ulPOVB0dSxqWewn5ypQFWbBt" async></script>
+</p>
+</li>
+<li>
+<p>Making a Docker container for Hugo site by following a <a href="https://www.youtube.com/watch?v=kkazBPHc4bk&amp;t=198s">Youtube tutorial</a>.</p>
+<ul>
+<li>
+<p>Made two directories namely <code>ansible-build</code> and <code>docker-build</code> in the Hugo repository. Shifted content of Hugo website to Docker-build.</p>
+</li>
+<li>
+<p>Made a Dockerfile. Specified Nginx static file location and localhost ports in the file.</p>
+</li>
+<li>
+<p>Built the Docker container and ran it. Failed in the earlier attempt since I forgot to make Dockerfile.</p>
+<ul>
+<li><code>docker build docker-build -t nginx-docker-build-demo</code>:Sends build context to Docker Daemon.</li>
+<li><code>docker run -it --rm -d -p 8000:80 --name web-server-docker nginx-docker-build-demo</code>:Runs the Docker on web-server.
+<script src="https://asciinema.org/a/sQzHGL7umB6JpnjzsbWIyP1ez.js" id="asciicast-sQzHGL7umB6JpnjzsbWIyP1ez" async></script>
+</li>
+</ul>
+</li>
+<li>
+<p>The site showed default Nginx. Added just the public repository contents of Hugo site to the Docker-build and removed previous content to fix that issue.
+<script src="https://asciinema.org/a/O9dzIKFXv7YBRQpVGkubtEt3k.js" id="asciicast-O9dzIKFXv7YBRQpVGkubtEt3k" async></script>
+</p>
+</li>
+<li>
+<p>Locally hosted Hugo site to croos-verify how site should look, since my Hugo theme was not rendered while running Docker container.
+<script src="https://asciinema.org/a/sdle0vIj2PgxSEM9eUIITa7Ah.js" id="asciicast-sdle0vIj2PgxSEM9eUIITa7Ah" async></script>
+</p>
+<p>Expected outcome
+![Expected outcome](/posts/Daily Updates/desiredsiteday9.PNG)</p>
+<p>Actual outcome
+![Actual outcome](/posts/Daily Updates/siteobtainedday9.PNG)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>References-</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=JSLpG_spOBM">Understanding Dockers and Containers</a></li>
+<li><a href="https://hub.docker.com/_/nginx">Nginx Images</a></li>
+</ul>
+</li>
+</ul>
 <h1 id="test-post">Test post</h1>
 
         </div>
