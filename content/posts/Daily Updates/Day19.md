@@ -57,10 +57,7 @@ menu:
   ```
   {{<asciinema gqo6TMWfbeUhYWBL3o1Ga5V12>}}
   
-- Spent some time on learning about Kubernetes.
-  
-  - Its utility as a Container Management Tool.
-  - Procedure of installation via three nodes- one master along with two slave nodes.
+
   
 - References-
   

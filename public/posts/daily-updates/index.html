@@ -625,7 +625,7 @@ aws ec2 create-internet-gatewayaws ec2 attach-internet-gateway --vpc-id vpc-0fd
   <a href="/posts/daily-updates/day2/" class="post-card-link">
     <div class="card">
       <div class="card-head">
-        <img class="card-img-top" src='' alt="Hero Image">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
       </div>
       <div class="card-body">
         <h5 class="card-title">Day 2</h5>
@@ -654,11 +654,7 @@ aws ec2 create-internet-gatewayaws ec2 attach-internet-gateway --vpc-id vpc-0fd
       </div>
       <div class="card-body">
         <h5 class="card-title">Day 20</h5>
-        <p class="card-text post-summary">Started working around with Kubernetes.
-  Made a directory kubernetesinstallation for storing private keys.
-  Created a VM to be used as a Master Node for my Kubernetes installation process.
-aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro    First attempt to connect to my Master Node using SSH.
-  Attempted connecting to my Master Node VM via SSH client but failed to do so, since my connection timed out.</p>
+        <p class="card-text post-summary"></p>
       </div>
       <div class="card-footer">
         <span class="float-left">June 8, 2020</span>
@@ -683,10 +679,10 @@ aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name mast
       </div>
       <div class="card-body">
         <h5 class="card-title">Day 21</h5>
-        <p class="card-text post-summary">Tried pinging the VM created.   Experimented around by creating instances with different subnets, security groups and VPCs linked.
+        <p class="card-text post-summary">  Tried pinging the VM created.   Experimented around by creating instances with different subnets, security groups and VPCs linked.
   Discovered that security group must have an inbound SSH rule, which has port 22 as ingress.
-  Finally made a successful SSH connection.     Attempted deploying Kubernetes cluster by following this tutorial.
-  Created a Master Node and established SSH connection.</p>
+  Finally made a successful SSH connection.     References:
+ Learning about Route 53 Kubernetes setup Github Guide    </p>
       </div>
       <div class="card-footer">
         <span class="float-left">June 8, 2020</span>

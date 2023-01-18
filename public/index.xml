@@ -411,7 +411,11 @@ Initial setup Search depends on additional output content type of JSON in config
       <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
       
       <guid>https://satwikvats.github.io/posts/kubernetes/</guid>
-      <description>Ansible Test post </description>
+      <description>Kubernetes   Spent some time on learning about Kubernetes.
+ Its utility as a Container Management Tool. Procedure of installation via three nodes- one master along with two slave nodes.    Started working around with Kubernetes.
+  Made a directory kubernetesinstallation for storing private keys.
+  Created a VM to be used as a Master Node for my Kubernetes installation process.
+aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.</description>
     </item>
     
     <item>
@@ -555,11 +559,7 @@ aws ec2 create-internet-gatewayaws ec2 attach-internet-gateway --vpc-id vpc-0fd
       <pubDate>Mon, 08 Jun 2020 06:00:20 +0600</pubDate>
       
       <guid>https://satwikvats.github.io/posts/daily-updates/day20/</guid>
-      <description>Started working around with Kubernetes.
-  Made a directory kubernetesinstallation for storing private keys.
-  Created a VM to be used as a Master Node for my Kubernetes installation process.
-aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro    First attempt to connect to my Master Node using SSH.
-  Attempted connecting to my Master Node VM via SSH client but failed to do so, since my connection timed out.</description>
+      <description></description>
     </item>
     
     <item>
@@ -568,10 +568,10 @@ aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name mast
       <pubDate>Mon, 08 Jun 2020 06:00:20 +0600</pubDate>
       
       <guid>https://satwikvats.github.io/posts/daily-updates/day21/</guid>
-      <description>Tried pinging the VM created.   Experimented around by creating instances with different subnets, security groups and VPCs linked.
+      <description>  Tried pinging the VM created.   Experimented around by creating instances with different subnets, security groups and VPCs linked.
   Discovered that security group must have an inbound SSH rule, which has port 22 as ingress.
-  Finally made a successful SSH connection.     Attempted deploying Kubernetes cluster by following this tutorial.
-  Created a Master Node and established SSH connection.</description>
+  Finally made a successful SSH connection.     References:
+ Learning about Route 53 Kubernetes setup Github Guide    </description>
     </item>
     
     <item>

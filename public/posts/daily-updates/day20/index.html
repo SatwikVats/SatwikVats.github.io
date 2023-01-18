@@ -21,11 +21,7 @@
 
 
 <meta property="og:title" content="Day 20" />
-<meta property="og:description" content="Started working around with Kubernetes.
-  Made a directory kubernetesinstallation for storing private keys.
-  Created a VM to be used as a Master Node for my Kubernetes installation process.
-aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro    First attempt to connect to my Master Node using SSH.
-  Attempted connecting to my Master Node VM via SSH client but failed to do so, since my connection timed out." />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://satwikvats.github.io/posts/daily-updates/day20/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-08T06:00:20&#43;06:00" />
@@ -428,94 +424,7 @@ aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name mast
         </div>
 
         <div class="post-content" id="post-content">
-          <ul>
-<li>
-<p>Started working around with Kubernetes.</p>
-<ul>
-<li>
-<p>Made a directory <code>kubernetesinstallation</code> for storing private keys.</p>
-</li>
-<li>
-<p>Created a VM to be used as a Master Node for my Kubernetes installation process.</p>
-<pre><code>aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro
-
-</code></pre><script src="https://asciinema.org/a/TBAH4doSotdyhEBFSANzBPLvi.js" id="asciicast-TBAH4doSotdyhEBFSANzBPLvi" async></script>
-
-</li>
-</ul>
-</li>
-<li>
-<p>First attempt to connect to my Master Node using SSH.</p>
-<ul>
-<li>
-<p>Attempted connecting to my Master Node VM via SSH client but failed to do so, since my connection timed out.</p>
-<pre><code>ssh -i masternodessh.pem ubuntu@ec2-13-234-225-150.ap-south-1.compute.amazonaws.com
-
-</code></pre></li>
-<li>
-<p>To make sure that my private key is not publicly visible, used the following command. Also, the private key file can be downloaded just once and make sure that its in the same directory as your
-working directory.</p>
-<pre><code>chmod 400 masternodessh.pem
-
-</code></pre><script src="https://asciinema.org/a/yQUixrAIOoGu3Nf8yjlUQ1lSe.js" id="asciicast-yQUixrAIOoGu3Nf8yjlUQ1lSe" async></script>
-
-</li>
-<li>
-<p>Tried connecting using Ec2 Instance Connect but failed.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Second attempt to connect to my Master Node using SSH.</p>
-<ul>
-<li>
-<p>Terminated the previous instance and created a new one with subnet and security group.</p>
-<pre><code>aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro --security-group-ids  --subnet-id subnet-0d373cd18c07e0145
-
-</code></pre><script src="https://asciinema.org/a/qvkGqhecwLzaxOz7akOraX1s2.js" id="asciicast-qvkGqhecwLzaxOz7akOraX1s2" async></script>
-
-</li>
-<li>
-<p>Failed to connect via SSH. Later realised that my instance was linked to a private subnet and hence, I didn&rsquo;t get a public DNS.</p>
-<pre><code>ssh -i &quot;masternodessh.pem&quot; ubuntu@10.0.1.84
-
-</code></pre><script src="https://asciinema.org/a/ya23FcocfqeeplwOWeWatdiJi.js" id="asciicast-ya23FcocfqeeplwOWeWatdiJi" async></script>
-
-</li>
-</ul>
-</li>
-<li>
-<p>Third attempt to connect to my Master Node using SSH.</p>
-<ul>
-<li>
-<p>Attached an internet Gateway.</p>
-<pre><code>aws ec2 attach-internet-gateway --internet-gateway-id igw-014783f25b2794337 --vpc-id vpc-0e595b592d80b7cf4
-
-</code></pre></li>
-<li>
-<p>Enabled DNS hostnames in VPC settings and &lsquo;auto-assign IPV4 address&rsquo; in the Subnet settings to &lsquo;yes&rsquo;.</p>
-</li>
-<li>
-<p>Terminated the previous instance and created a new one with same subnet and security group.
-<script src="https://asciinema.org/a/lS26m0pGw27oVeLmjGhObPPKF.js" id="asciicast-lS26m0pGw27oVeLmjGhObPPKF" async></script>
-</p>
-</li>
-<li>
-<p>Failed again, despite managing to get a public DNS.
-<script src="https://asciinema.org/a/HfG8cOfYQr1oosPfgZ5J9sdMN.js" id="asciicast-HfG8cOfYQr1oosPfgZ5J9sdMN" async></script>
-</p>
-</li>
-</ul>
-</li>
-<li>
-<p>References:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/20941704/ec2-instance-has-no-public-dns">Possible reasons for not getting a public DNS for SSH client</a></li>
-<li><a href="https://www.youtube.com/watch?v=8UqtMcX_kg0">SSH to EC2 Instances using Linux or Mac Tutorial</a></li>
-</ul>
-</li>
-</ul>
-
+          
         </div>
 
         

@@ -421,7 +421,142 @@
         </div>
 
         <div class="post-content" id="post-content">
-          <h1 id="ansible">Ansible</h1>
+          <h1 id="kubernetes">Kubernetes</h1>
+<ul>
+<li>
+<p>Spent some time on learning about Kubernetes.</p>
+<ul>
+<li>Its utility as a Container Management Tool.</li>
+<li>Procedure of installation via three nodes- one master along with two slave nodes.</li>
+</ul>
+</li>
+<li>
+<p>Started working around with Kubernetes.</p>
+<ul>
+<li>
+<p>Made a directory <code>kubernetesinstallation</code> for storing private keys.</p>
+</li>
+<li>
+<p>Created a VM to be used as a Master Node for my Kubernetes installation process.</p>
+<pre><code>aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro
+
+</code></pre><script src="https://asciinema.org/a/TBAH4doSotdyhEBFSANzBPLvi.js" id="asciicast-TBAH4doSotdyhEBFSANzBPLvi" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>First attempt to connect to my Master Node using SSH.</p>
+<ul>
+<li>
+<p>Attempted connecting to my Master Node VM via SSH client but failed to do so, since my connection timed out.</p>
+<pre><code>ssh -i masternodessh.pem ubuntu@ec2-13-234-225-150.ap-south-1.compute.amazonaws.com
+
+</code></pre></li>
+<li>
+<p>To make sure that my private key is not publicly visible, used the following command. Also, the private key file can be downloaded just once and make sure that its in the same directory as your
+working directory.</p>
+<pre><code>chmod 400 masternodessh.pem
+
+</code></pre><script src="https://asciinema.org/a/yQUixrAIOoGu3Nf8yjlUQ1lSe.js" id="asciicast-yQUixrAIOoGu3Nf8yjlUQ1lSe" async></script>
+
+</li>
+<li>
+<p>Tried connecting using Ec2 Instance Connect but failed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Second attempt to connect to my Master Node using SSH.</p>
+<ul>
+<li>
+<p>Terminated the previous instance and created a new one with subnet and security group.</p>
+<pre><code>aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro --security-group-ids  --subnet-id subnet-0d373cd18c07e0145
+
+</code></pre><script src="https://asciinema.org/a/qvkGqhecwLzaxOz7akOraX1s2.js" id="asciicast-qvkGqhecwLzaxOz7akOraX1s2" async></script>
+
+</li>
+<li>
+<p>Failed to connect via SSH. Later realised that my instance was linked to a private subnet and hence, I didn&rsquo;t get a public DNS.</p>
+<pre><code>ssh -i &quot;masternodessh.pem&quot; ubuntu@10.0.1.84
+
+</code></pre><script src="https://asciinema.org/a/ya23FcocfqeeplwOWeWatdiJi.js" id="asciicast-ya23FcocfqeeplwOWeWatdiJi" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>Third attempt to connect to my Master Node using SSH.</p>
+<ul>
+<li>
+<p>Attached an internet Gateway.</p>
+<pre><code>aws ec2 attach-internet-gateway --internet-gateway-id igw-014783f25b2794337 --vpc-id vpc-0e595b592d80b7cf4
+
+</code></pre></li>
+<li>
+<p>Enabled DNS hostnames in VPC settings and &lsquo;auto-assign IPV4 address&rsquo; in the Subnet settings to &lsquo;yes&rsquo;.</p>
+</li>
+<li>
+<p>Terminated the previous instance and created a new one with same subnet and security group.
+<script src="https://asciinema.org/a/lS26m0pGw27oVeLmjGhObPPKF.js" id="asciicast-lS26m0pGw27oVeLmjGhObPPKF" async></script>
+</p>
+</li>
+<li>
+<p>Failed again, despite managing to get a public DNS.
+<script src="https://asciinema.org/a/HfG8cOfYQr1oosPfgZ5J9sdMN.js" id="asciicast-HfG8cOfYQr1oosPfgZ5J9sdMN" async></script>
+</p>
+</li>
+<li>
+<p>Attempted deploying Kubernetes cluster by following this <a href="https://www.youtube.com/watch?v=ndNKI5GBdd0">tutorial</a>.</p>
+</li>
+<li>
+<p>Created a Master Node and established SSH connection.
+<script src="https://asciinema.org/a/0YGqVFaWcGh5q2mth9Jc7QM86.js" id="asciicast-0YGqVFaWcGh5q2mth9Jc7QM86" async></script>
+</p>
+</li>
+<li>
+<p>Installed AWS CLI and configured with my credentials.</p>
+</li>
+<li>
+<p>To mask-off highly confidential credentials like secret access key on terminal, we may use the following commands.</p>
+<pre><code>#Any user input provided on terminal is rendered invisible.
+stty -echo
+
+</code></pre><pre><code>#To return back to normal mode.
+stty echo
+
+</code></pre><script src="https://asciinema.org/a/PvjCw5Z1LeD9njd80xrgolOk4.js" id="asciicast-PvjCw5Z1LeD9njd80xrgolOk4" async></script>
+
+</li>
+<li>
+<p>Installed all the necessary packages including kubectl.</p>
+<pre><code>curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '&quot;' -f 4)/kops-lin
+ux-amd64
+chmod +x kops-linux-amd64
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+</code></pre></li>
+<li>
+<p>Started exploring about Route 53 since it was required in this method.
+<script src="https://asciinema.org/a/WjzKnHwDTg7I7DOwhWaejHR7g.js" id="asciicast-WjzKnHwDTg7I7DOwhWaejHR7g" async></script>
+</p>
+</li>
+<li>
+<p>Since I found a simpler approach, terminated this instance and started afresh.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>References:</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/20941704/ec2-instance-has-no-public-dns">Possible reasons for not getting a public DNS for SSH client</a></li>
+<li><a href="https://www.youtube.com/watch?v=8UqtMcX_kg0">SSH to EC2 Instances using Linux or Mac Tutorial</a></li>
+</ul>
+</li>
+</ul>
 <h1 id="test-post">Test post</h1>
 
         </div>
