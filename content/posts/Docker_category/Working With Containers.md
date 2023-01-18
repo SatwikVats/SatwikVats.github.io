@@ -10,13 +10,13 @@ menu:
 ---
 
   - GroupAdded Docker and added a user to avoid usage of sudo everytime, using command **$sudo usermod -aG docker $USER**.
-    [![asciicast](https://asciinema.org/a/pzzcJ4ayAUglUXLOHFxFpKbQK.svg)](https://asciinema.org/a/pzzcJ4ayAUglUXLOHFxFpKbQK)
+    {{<asciinema pzzcJ4ayAUglUXLOHFxFpKbQK>}}
 
   - Tried creating my first Docker container but failed, due to denial of some permissions.
-    [![asciicast](https://asciinema.org/a/UshelqIMVU9Wnu4FeHykHShiR.svg)](https://asciinema.org/a/UshelqIMVU9Wnu4FeHykHShiR)
+    {{<asciinema UshelqIMVU9Wnu4FeHykHShiR>}}
   
   - Tried pulling Nginx image, but failed due to lack of storage. My Asciinema recording stopped abruptly due to the same.
-    [![asciicast](https://asciinema.org/a/uyUyl1VTwIHVl0asDS7U1Uj0X.svg)](https://asciinema.org/a/uyUyl1VTwIHVl0asDS7U1Uj0X)
+    {{<asciinema uyUyl1VTwIHVl0asDS7U1Uj0X>}}
 
 - Working with containers.
 
@@ -31,4 +31,4 @@ menu:
   
   - Learnt how to remove a stopped container by using **docker rm <ContainerID>** command.
   
-    [![asciicast](https://asciinema.org/a/qy4mU0eJnRxHp1HaZmOUALSKB.svg)](https://asciinema.org/a/qy4mU0eJnRxHp1HaZmOUALSKB)
+    {{<asciinema qy4mU0eJnRxHp1HaZmOUALSKB>}}

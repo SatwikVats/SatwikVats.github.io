@@ -54,11 +54,7 @@
       <pubDate>Mon, 08 Jun 2020 06:00:20 +0600</pubDate>
       
       <guid>https://satwikvats.github.io/posts/docker_category/working-with-containers/</guid>
-      <description>GroupAdded Docker and added a user to avoid usage of sudo everytime, using command $sudo usermod -aG docker $USER. 
-  Tried creating my first Docker container but failed, due to denial of some permissions. 
-  Tried pulling Nginx image, but failed due to lack of storage. My Asciinema recording stopped abruptly due to the same. 
-  Working with containers.
-  Successfully pulled Nginx Image.</description>
+      <description>GroupAdded Docker and added a user to avoid usage of sudo everytime, using command $sudo usermod -aG docker $USER.    Tried creating my first Docker container but failed, due to denial of some permissions.    Tried pulling Nginx image, but failed due to lack of storage. My Asciinema recording stopped abruptly due to the same.    Working with containers.</description>
     </item>
     
   </channel>
