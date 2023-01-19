@@ -1,0 +1,56 @@
+# section information
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: Samsung R&D Institute
+    url: "https://research.samsung.com/sri-b"
+    location: Bangalore
+    # company overview
+    overview: SRI-B is the largest R&D Center outside Korea and a key innovation hub in the Samsung group.
+  positions:
+  - designation: Student Trainee
+    start: July 2022
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    end: December 2022
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Enhancing Software Architecture Maturity Score of code by changing Preprocessor Flags.
+    - Writing Unit Test Cases for API Functions using Pytest and Mock Object libraries.
+    - Fixing Bugs in a Machine Learning Framework, to improve code Maintainability and Reliability.
+
+- company:
+    name: CSIR-CEERI, Pilani
+    url: "https://www.ceeri.res.in/"
+    location: Pilani
+    overview: CEERI is a constituent laboratory of Council of Scientific and Industrial Research, New Delhi.
+  positions:
+  - designation: Research Intern
+    start: January 2022
+    end: April 2022
+    responsibilities:
+    - Training a Resnet-18 model on Kaggle dataset to predict Covid-19 using chest X-Ray images.
+    - Applying the model to a Federated Learning framework addressing the client's data privacy.
+    - Using FedProx Optimization Technique on the model to improve Convergence Rate.
+
+- company:
+    name: NPBridge Solutions Pvt Ltd
+    url: "https://www.npbridge.com/"
+    location: Bangalore
+    overview: NPBridge is an organisation working to generate social impact with technology.
+  positions:
+  - designation: Summer Intern
+    start: June 2021
+    end: July 2021
+    responsibilities:
+    - Devising solutions for containerizing and executing a set of tasks using Docker and Ansible.
+    - Learning the use of Hugo framework to maintain websites, automated with CI/CD tools.
+    - This website is an outcome of my learnings at NPBridge Solutions.

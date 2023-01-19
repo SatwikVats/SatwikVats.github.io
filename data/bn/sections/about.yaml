@@ -1,0 +1,57 @@
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+
+
+company:
+  name: Birla Institute of Technology & Science
+  url: 'https://www.bits-pilani.ac.in/'
+
+summary: 'I am a final year student, pursuing my Bachelor’s Degree in Electronics & Instrumentation at BITS Pilani, Pilani campus. A curious mind always willing to learn and acquire new skills, I aspire to become a software developer one day.'
+
+
+designation: Student
+
+
+socialLinks:
+  - name: Email
+    icon: fas fa-envelope
+    url: vats.satwik@gmail.com
+  - name: Github
+    icon: fab fa-github
+    url: 'https://www.github.com/SatwikVats'
+  - name: LinkedIn
+    icon: fab fa-linkedin
+    url: 'https://www.linkedin.com/in/satwikvats'
+
+resume: "files/resume.pdf"
+
+resourceLinks:
+  - title: "My Resume"
+    url: "files/resume.pdf"
+
+#summary: 'I am a final year student, pursuing my Bachelor’s Degree in Electronics & Instrumentation at BITS Pilani, Pilani campus. A curious mind always willing to learn and acquire new skills, I aspire to become a software developer one day.'
+
+softSkills:
+  - name: Leadership
+    percentage: 80
+    color: blue
+  - name: Team Work
+    percentage: 85
+    color: yellow
+  - name: Communication
+    percentage: 85
+    color: pink
+  - name: Hard Working
+    percentage: 80
+    color: green
+
+#badges:
+  #- type: certification
+  #  name: Python Specialization | University of Michigan
+  #  url: "https://www.coursera.org/account/accomplishments/certificate/DY7U92XYASMJ"
