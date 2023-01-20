@@ -3,6 +3,9 @@ languageCode: en-us
 title: "Know me better.."
 theme: "toha"
 
+
+
+
 # Use Hugo modules to add theme
 #module:
   #imports:
@@ -47,7 +50,7 @@ params:
   # GitHub repo URL and branch of your site
   #gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
   gitRepo: https://github.com/SatwikVats/SatwikVats.github.io
-  gitBranch: main
+  gitBranch: master
 
   topNavbar:
     maxVisibleSections: 5
