@@ -45,8 +45,8 @@ params:
     #favicon: /images/site/favicon.png
   
   # GitHub repo URL and branch of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
-  #gitRepo: https://github.com/SatwikVats/SatwikVats.github.io
+  #gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/SatwikVats/SatwikVats.github.io
   gitBranch: main
 
   topNavbar:
