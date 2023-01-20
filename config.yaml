@@ -31,6 +31,7 @@ enableEmoji: true
 # Site parameters
 params:
   # GitHub repo URL and branch of your site
+  #gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
   gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
   gitBranch: main
 
