@@ -52,6 +52,9 @@ params:
   topNavbar:
     maxVisibleSections: 5
 
+  # specify whether you want to show Table of Contents in reading page
+  enableTOC: true
+
   features:
 
     # Enable dark theme
@@ -89,16 +92,15 @@ params:
 
 
   #Dark theme
-  #darkMode:
-    #enable: true
-    #provider: darkreader
-    #default: system
+  darkMode:
+    enable: true
+    provider: darkreader
+    default: dark
   
   # specify whether you want to write some blog posts or not
   #enableBlogPost: true
 
-  # specify whether you want to show Table of Contents in reading page
-  #enableTOC: true
+  
 
   # specify whether you want to show Table of Contents in reading page
     toc:
