@@ -9,7 +9,7 @@ menu:
     weight: 10
 ---
 
-Wanna launch your own website, but you aren't acquainted with HTML/CSS/React.js/Node.js? You don't wanna take and easy route via Wordpress! Don't worry, Hugo has got you covered. It's a widely used framework for deploying a static site, where a set of themes are made availabe to the user for customization. Elaborate documentation guides the user to make use of the theme in a better way. CI/CD tools further make it easy for the user to continuously push changes into the repository and update the site without deploying it again and again.
+Wanna launch your own website, but you aren't acquainted with HTML/CSS/React.js/Node.js? You don't wanna take an easy route via Wordpress either! Don't worry, Hugo has got you covered. It's a widely used framework for deploying a static site, where a set of themes are made availabe to the user for customization. Elaborate documentation guides the user to make use of the theme in a better way. CI/CD tools further make it easy for the user to continuously push changes into the repository and update the site without deploying it again and again.
 
 ## Installing Hugo on Linux.
 
