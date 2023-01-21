@@ -1,8 +1,8 @@
 ---
-title: Docker_category
+title: Docker
 menu:
   sidebar:
-    name: About Docker
+    name: Docker
     identifier: abt_docker
     weight: 300
 ---

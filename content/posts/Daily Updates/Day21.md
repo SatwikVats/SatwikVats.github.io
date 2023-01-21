@@ -9,16 +9,7 @@ menu:
     weight: 10
 ---
 
-- Tried pinging the VM created.
-  {{<asciinema JKThgzuwECCT8I43LJJajpOOU>}}
-  
-- Experimented around by creating instances with different subnets, security groups and VPCs linked. 
-  
-  - Discovered that security group must have an inbound SSH rule, which has port 22 as ingress.
-  
-  - Finally made a successful SSH connection.
-    {{<asciinema ACr3ZW8Q8xU4MUt7VtQONu72H>}}
-    
+
 
   
 - References:

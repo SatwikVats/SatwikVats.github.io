@@ -6,7 +6,7 @@ menu:
     name: Introduction to Docker
     identifier: intro_docker
     parent: abt_docker
-    weight: 10
+    weight: 1
 ---
 
 # Docker

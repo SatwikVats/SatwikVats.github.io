@@ -6,7 +6,7 @@ menu:
     name: Hosting a Hugo Site in Docker Environment
     identifier: hugo_site_in_docker
     parent: abt_docker
-    weight: 10
+    weight: 4
 ---
 
 - Making a Docker container for Hugo site by following a [Youtube tutorial](https://www.youtube.com/watch?v=kkazBPHc4bk&t=198s).

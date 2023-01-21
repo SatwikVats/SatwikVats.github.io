@@ -28,19 +28,7 @@ menu:
 
 - Installed Terraform extension on my Visual Studio code as well.
 
-- Made an AWS account alongside exploring AWSEducate portal.
-  [AWS Educate](https://aws.amazon.com/education/awseducate/)
 
-- Tried building AWS Cloud Infrastructure using Terraform.
-  - Created a new directory.
-  - Initialize Terraform in it by using `terraform init` command.
-  - Created main.tf file and specified provider and region. In this case, provider is `aws`, and the region is `ap-south-1`(Mumbai).
-    - `provider "aws" { 
-       region = "ap-south-1" 
-       }`
-    {{<asciinema kySBeoFxTnA8xrvXOTDpt0fl0>}}
-  - Created security credentials(access key and secret key) on the AWS management console and fetched it for main.tf.
-    {{<asciinema D2UDgjNPeDiAw7yxqBgAoXw9G>}}
 
 - References:
   * [Understanding declarative and imperative programming](https://www.youtube.com/watch?v=6RAQynw2Sy8)

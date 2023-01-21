@@ -6,7 +6,7 @@ menu:
     name: Hosting Nginx Image
     identifier: hosting_nginx
     parent: abt_docker
-    weight: 10
+    weight: 3
 ---
 
 - Attempted locally hosting the docker image.

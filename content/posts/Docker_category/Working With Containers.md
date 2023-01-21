@@ -6,7 +6,7 @@ menu:
     name: Working with Containers
     identifier: working_w_containers
     parent: abt_docker
-    weight: 10
+    weight: 2
 ---
 
   - GroupAdded Docker and added a user to avoid usage of sudo everytime, using command **$sudo usermod -aG docker $USER**.
