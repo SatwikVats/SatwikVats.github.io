@@ -26,8 +26,26 @@ skills:
 
 - name: Python
   logo: /images/sections/skills/python.png
-  summary: "Used it during my stint at Samsung R&D"
+  summary: "Python was the language prominently used by me during my stint at Samsung R&D, for writing unit test cases."
 
 - name: SQL
   logo: /images/sections/skills/database.png
-  summary: "Practiced writing SQL queries during placement preparation."
+  summary: "Practiced writing SQL queries during placement preparation and got acquainted with concepts of RDBMS."
+
+- name: Data Structures & Algorithms
+  logo: /images/sections/skills/algorithm.png
+  summary: "Being the ultimate holy book for IT Jobs/Internships, Data Structures and Algorithms is a topic which can't be ignored."
+
+- name: Operating Systems
+  logo: /images/sections/skills/software.png
+  summary: "Have a comprehensive knowledge of concepts like various scheduling algos, semaphores, deadlock prevention algos and paging."
+
+- name: Docker
+  logo: /images/sections/skills/docker.png
+  summary: "Used Docker on various occasions during the course of my internships as programs used to be Docker-containerized."
+  url: "https://www.docker.com/"
+
+- name: Git
+  logo: /images/sections/skills/git.png
+  summary: "Experienced with git-based collaborative development. Used Github and Git extensively in this project as well."
+  url: "https://git-scm.com/"
