@@ -12,6 +12,10 @@ menu:
 - Made an AWS account alongside exploring AWSEducate portal.
   [AWS Educate](https://aws.amazon.com/education/awseducate/)
 
+- Important terminologies:
+  - Ec2: In niche terms, ec2 is equivalent to a Virtual Machine in AWS. We may create, use, terminate and destroy ec2 instances according
+    to our needs.
+
 
 
  

@@ -45,10 +45,3 @@ Follow these steps to create your own Hugo Site.
 
 {{<asciinema 418763>}}
 
-- Working with VM.
- 
-  - Created a tag for VM.
-    ```
-    aws ec2 create-tags --resource i-08431b825258399a3 --tags Key=Name,Value=SkvInstance
-    
-    ```
