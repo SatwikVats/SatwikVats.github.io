@@ -5,7 +5,8 @@ description: Introduction to Sample Post
 menu:
   sidebar:
     name: Kubernetes
-    identifier: Kubernetes
+    identifier: kubernetes
+    parent: devops
     weight: 10
 ---
 

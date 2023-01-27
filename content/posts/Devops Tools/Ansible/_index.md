@@ -5,7 +5,8 @@ description: Introduction to Sample Post
 menu:
   sidebar:
     name: Ansible
-    identifier: Ansible
+    identifier: ansible
+    parent: devops
     weight: 10
 ---
 

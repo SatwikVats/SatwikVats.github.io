@@ -5,10 +5,7 @@ description: Introduction to Sample Post
 menu:
   sidebar:
     name: Github Actions
-    identifier: Github Actions
+    identifier: github_actions
+    parent: ci_cd
     weight: 10
 ---
-
-# Ansible
-
-# Test post

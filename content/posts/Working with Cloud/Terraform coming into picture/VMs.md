@@ -49,7 +49,7 @@ menu:
   - Created a directory and initialized Terraform in it.
     {{<asciinema 45q0k5gvvUmmZrHv3ccpPjxJZ>}}
   
-  - Installed AWS CLI package whic is required for using `aws` commands.
+  - Installed AWS CLI package which is required for using `aws` commands.
   
   - Used `aws configure` to provide necessary fields like Access Key ID, Secret Access Key, Default Region and Default Output Format.
     {{<asciinema YrDwVH8WqTOOt5lLNx6tmSjxo>}}
