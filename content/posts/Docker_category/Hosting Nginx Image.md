@@ -23,3 +23,6 @@ menu:
   
   -Tried tampering the **about.html** file and the changes were reflected on the server accordingly, on refreshing.
   {{<asciinema 0ulPOVB0dSxqWewn5ypQFWbBt>}}
+
+- References-
+  * [Nginx Images](https://hub.docker.com/_/nginx)

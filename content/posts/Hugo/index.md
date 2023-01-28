@@ -9,7 +9,7 @@ menu:
     weight: 10
 ---
 
-Wanna launch your own website, but you aren't acquainted with HTML/CSS/React.js/Node.js? You don't wanna take an easy route via Wordpress either! Don't worry, Hugo has got you covered. It's a widely used framework for deploying a static site, where a set of themes are made availabe to the user for customization. Elaborate documentation guides the user to make use of the theme in a better way. CI/CD tools further make it easy for the user to continuously push changes into the repository and update the site without deploying it again and again.
+Wanna launch your own website, but you aren't acquainted with HTML/CSS/React.js/Node.js? You don't wanna take an easy route via Wordpress either! Don't worry, Hugo has got you covered. It's a widely used framework for building static sites and personal blogs, which has a vast set of catchy templates already available on its site and an individual can make his/her site on similar lines. Elaborate documentation guides the user to make use of the theme in a better way. CI/CD tools like [GitHub Actions](https://github.com/marketplace/actions/deploy-to-github-pages) and [CircleCI](https://circleci.com/blog/automate-your-static-site-deployment-with-circleci/) further make it easy for the user to continuously push changes into the repository and update the site without deploying it again and again.
 
 ## Installing Hugo on Linux.
 
@@ -19,7 +19,7 @@ Wanna launch your own website, but you aren't acquainted with HTML/CSS/React.js/
 
 Follow these steps to create your own Hugo Site.
 
-- Initializing a Hugo Site.
+- Initializing a Hugo Site. 
 
 {{<asciinema 3hNwm6KZqV8Duqtli0i9HwHv9>}}
 

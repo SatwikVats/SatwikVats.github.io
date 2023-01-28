@@ -32,3 +32,6 @@ menu:
   - Learnt how to remove a stopped container by using **docker rm <ContainerID>** command.
   
     {{<asciinema qy4mU0eJnRxHp1HaZmOUALSKB>}}
+
+- References-
+  * [Understanding Dockers and Containers](https://www.youtube.com/watch?v=JSLpG_spOBM)
