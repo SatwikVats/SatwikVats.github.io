@@ -10,3 +10,4 @@ menu:
 ---
 
 - **Github** is the most widely used platform by software developers across the world. It can be used by organizations where a group working on a project can collaborate with minimalistic efforts and contribute. It hosts various ope-source projects where anyone could freely collaborate.
+

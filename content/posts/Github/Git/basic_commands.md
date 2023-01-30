@@ -17,3 +17,6 @@ menu:
   
 - Gitlog till 18 June.
   {{<asciinema kn4Q3Scyl8ADvhbXsUliIP2zb>}}
+
+- References-
+  * [How to avoid providing credentials for every Git Push](https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/)

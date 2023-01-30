@@ -9,7 +9,7 @@ menu:
     weight: 10
 ---
 
-- Discussion on how GitCommits can be put to best of their use.
+
 - Modified some content on my Hugo website and added a 'Recent Posts' section.
 [![asciicast](https://asciinema.org/a/8fz6ypSTsmjIl5ytvbKNyFR5D.svg)](https://asciinema.org/a/8fz6ypSTsmjIl5ytvbKNyFR5D)
 

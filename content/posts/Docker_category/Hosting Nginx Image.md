@@ -26,3 +26,4 @@ menu:
 
 - References-
   * [Nginx Images](https://hub.docker.com/_/nginx)
+  * [Running an Nginx container inside Docker](https://www.youtube.com/watch?v=mgwo8fq-SkA)
