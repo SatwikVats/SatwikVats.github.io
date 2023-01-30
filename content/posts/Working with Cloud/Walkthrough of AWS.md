@@ -17,23 +17,6 @@ menu:
     to our needs.
 
 
-
- 
-
-
-
-  
-
-
-
-  
-  
-    
-
-  
-    
-
-
 - Experimentation with various AWS resources using CLI.
  
   - Created a VPC.
