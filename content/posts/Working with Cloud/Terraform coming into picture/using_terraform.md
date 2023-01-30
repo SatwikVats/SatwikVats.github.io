@@ -1,12 +1,12 @@
 ---
-title: "Day 11"
+title: "Terraform Setup"
 date: 2020-06-08T06:00:20+06:00
 menu:
   sidebar:
-    name: 21 June
-    identifier: Daily Updates-day11
-    parent: Daily Updates
-    weight: 10
+    name: Terraform Setup
+    identifier: terraform_setup
+    parent: terraform
+    weight: 2
 ---
 
 - Installed Terraform on terminal, following the steps in the given doc-
@@ -28,11 +28,15 @@ menu:
 
 - Installed Terraform extension on my Visual Studio code as well.
 
+- `terraform apply --auto-approve` skips the task of responding `yes`, which recurrs while executing `terraform apply`.
+
+- Discovered that two new files, `terraform.tfstate` and `terraform.tfstate.backup` are created on initializing terraform in a directory.
+  {{<asciinema kiWSf61ZVE1hmjY0FucJt1lqI>}}
+
 
 
 - References:
+  * [Introduction to Terraform](https://www.youtube.com/watch?v=l5k1ai_GBDE)
   * [Understanding declarative and imperative programming](https://www.youtube.com/watch?v=6RAQynw2Sy8)
   * [Automate your AWS Cloud Infrastructure using Terraform, right from scratch](https://www.youtube.com/watch?v=SLB_c_ayRMo)
-
-
-
+  * [Automating your AWS Cloud Infrastructure](https://www.youtube.com/watch?v=SLB_c_ayRMo&t=5847s)

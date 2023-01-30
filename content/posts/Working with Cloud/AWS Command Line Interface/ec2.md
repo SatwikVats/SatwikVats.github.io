@@ -43,3 +43,8 @@ menu:
     
     ```
     {{<asciinema 9kjpixqG7CCenXz0HTBwQSlft>}}
+
+- References :
+  * [AWS Command Line Interface official documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
+  * [AWS CLI for beginners](https://www.youtube.com/watch?v=PWAnY-w1SGQ&t=1055s)
+  * [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/index.html)

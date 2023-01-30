@@ -26,13 +26,11 @@ menu:
   
 
 
-- Installed necessary Ansible package on my system, follwed by Python which is necessary for running Ansible.
-[![asciicast](https://asciinema.org/a/3Usqq3IbjQ4TWelFzGShOoIZJ.svg)](https://asciinema.org/a/3Usqq3IbjQ4TWelFzGShOoIZJ)
+
 
 
   
-- Increased my storage by referring a [YT tutorial](https://www.youtube.com/watch?v=jpMaTnnmcyI). I had opted for dynamic storage space while setting up the VM, hence the process was relatively     easier for me.
-  
+
 
 
     

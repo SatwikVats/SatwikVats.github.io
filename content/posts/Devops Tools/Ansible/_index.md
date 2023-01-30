@@ -10,6 +10,3 @@ menu:
     weight: 10
 ---
 
-# Ansible
-
-# Test post
