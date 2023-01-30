@@ -15,6 +15,29 @@ Wanna launch your own website, but you aren't acquainted with HTML/CSS/React.js/
 
 ## Basic Hugo Commands.
 
+```
+#Creating a new site in a directory of name 'Sitename'
+hugo new site <Sitename>
+
+#Creating a new post
+hugo new <Path of the new file>
+
+#Tracking the status of hugo site
+hugo
+
+hugo new server
+
+hugo server
+
+hugo server -d
+
+hugo server -w
+
+#Building the site
+hugo build
+
+```
+
 ## Creating a new Hugo Site.
 
 Follow these steps to create your own Hugo Site.
@@ -26,6 +49,7 @@ Follow these steps to create your own Hugo Site.
 - Remotely adding to Github Repository.
 
 {{<asciinema 9xVaI78ItMng5RLAVxWC4YPIK>}}
+
 
 ## Customizing your Hugo Site.
 
@@ -40,6 +64,11 @@ Follow these steps to create your own Hugo Site.
 - Setiing up the homepage with some relevant content.
 
 {{<asciinema P5ojQAdJKfVwp0AUd07C6Stgs>}}
+
+- Modifying content and adding a 'Recent Posts' section.
+
+{{<asciinema 8fz6ypSTsmjIl5ytvbKNyFR5D>}}
+
 
 ## Hosting the Site locally.
 

@@ -16,8 +16,8 @@ menu:
   - Made a Dockerfile. Specified Nginx static file location and localhost ports in the file.
   
   - Built the Docker container and ran it. Failed in the earlier attempt since I forgot to make Dockerfile.
-    * `docker build docker-build -t nginx-docker-build-demo`:Sends build context to Docker Daemon.
-    * `docker run -it --rm -d -p 8000:80 --name web-server-docker nginx-docker-build-demo`:Runs the Docker on web-server.
+    * `docker build docker-build -t nginx-docker-build-demo`: Sends build context to Docker Daemon.
+    * `docker run -it --rm -d -p 8000:80 --name web-server-docker nginx-docker-build-demo`: Runs the Docker on web-server.
     {{<asciinema sQzHGL7umB6JpnjzsbWIyP1ez>}}
     
   - The site showed default Nginx. Added just the public repository contents of Hugo site to the Docker-build and removed previous content to fix that issue.
@@ -27,7 +27,7 @@ menu:
     {{<asciinema sdle0vIj2PgxSEM9eUIITa7Ah>}}
     
     Expected outcome
-    ![Expected outcome](/posts/Daily Updates/desiredsiteday9.PNG)
+    ![Expected outcome](/posts/Docker_category/desiredsiteday9.PNG)
     
     Actual outcome
-    ![Actual outcome](/posts/Daily Updates/siteobtainedday9.PNG)
+    ![Actual outcome](/posts/Docker_category/siteobtainedday9.PNG)

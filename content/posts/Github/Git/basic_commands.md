@@ -9,6 +9,9 @@ menu:
     weight: 2
 ---
 
+- Installing Git on Linux.
+  {{<asciinema tyRFNhVmDauNPyUOGT4syaRBc>}}
+
 - Tried few Git commands like `git stash`, `git stash apply` and `git checkout`.
   {{<asciinema i3w43ACf8dTvhhiPdkEWbzt3p>}}
 

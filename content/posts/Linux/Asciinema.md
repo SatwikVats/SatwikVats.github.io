@@ -8,6 +8,9 @@ menu:
     weight: 300
 ---
 
+- Learnt basic Asciinema commands and prepared a few AsciiCasts.
+  {{<asciinema z50Js6wkZeLJz7l0zmBYPrOai>}}
+
 - Figured out how to embed Asciicast directly on my site by using my own shortcode.
 
   - Made a directory 'Shortcodes' under 'Layouts' section of my Hugo site.
