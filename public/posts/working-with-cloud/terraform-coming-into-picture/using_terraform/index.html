@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Terraform Setup</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+<meta property="og:title" content="Terraform Setup" />
+<meta property="og:description" content="Installed Terraform on terminal, following the steps in the given doc- Step-by-step guide on Terraform installation   Made a Docker container out of Terraform and locally hosted the Nginx image.
+ Created a new directory. Initialized Terraform in it by using terraform init command. Created main.tf file. Specified resources and providers there. Finally ran the image on LocalHost:8000 ![Nginx Image hosted using Terraform](/posts/Daily Updates/nginxsiteterraformday11.PNG) Learnt some of the basic Terraform commands like plan, apply , destroy along the way." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://satwikvats.github.io/posts/working-with-cloud/terraform-coming-into-picture/using_terraform/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-08T06:00:20&#43;06:00" />
+<meta property="article:modified_time" content="2020-06-08T06:00:20&#43;06:00" />
+
+
+
+    
+    
+<meta name="description" content="Terraform Setup" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      Know me better..</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/hugo/" title="Hugo">Hugo</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/netlify/" title="Netlify">Netlify</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/working-with-cloud/">Cloud Computing</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/introduction-to-cloud-computing/" title="Introduction to Cloud Computing">Introduction to Cloud Computing</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/working-with-cloud/aws-command-line-interface/">AWS CLI</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/ec2/" title="EC2">EC2</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/vpc/" title="vpc">vpc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/key-pair/" title="Key-pair">Key-pair</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/s3/" title="S3 Storage Buckets">S3 Storage Buckets</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/working-with-cloud/terraform-coming-into-picture/">Terraform</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/working-with-cloud/terraform-coming-into-picture/using_terraform/" title="Terraform Setup">Terraform Setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/vms/" title="VMs">VMs</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/vpc/" title="Vpc">Vpc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/web-server/" title="web-server">web-server</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/walkthrough-of-aws/" title="Walkthrough of AWS">Walkthrough of AWS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/devops-tools/">Devops</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/devops-tools/ansible/">Ansible</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/ansible/ansibleconfig/" title="Ansible Config">Ansible Config</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/devops-tools/kubernetes/">Kubernetes</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/kubernetes/intro/" title="Knets_content">Knets_content</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/devops-tools/ci-cd/">CI/CD</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/ci-cd/circleci/" title="Circle CI">Circle CI</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/ci-cd/github-actions/" title="Github Actions">Github Actions</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/docker_category/">Docker</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/installation/" title="Introduction to Docker">Introduction to Docker</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/working-with-containers/" title="Working with Containers">Working with Containers</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/hosting-nginx-image/" title="Hosting Nginx Image">Hosting Nginx Image</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/hosting-hugo-site-in-a-docker-environment/" title="Hosting a Hugo Site in Docker Environment">Hosting a Hugo Site in Docker Environment</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/github/">Github</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/github/about-github/" title="About Github">About Github</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/github/github-pages/" title="Github Pages">Github Pages</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/github/git/">Git</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/github/git/basic_commands/" title="Git">Git</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/linux/">Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/linux/asciinema/" title="Asciinema">Asciinema</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/linux/basic-commands/" title="Basic Commands">Basic Commands</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/linux/oracle-virtualbox/" title="Oracle Virtualbox">Oracle Virtualbox</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://satwikvats.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/default-avatar_hu1b14593c51b09e0fcd18693678a8f4ed_42371_120x120_fit_box_2.png' alt="Author Image">
+          <h5 class="author-name"></h5>
+          <p>June 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>Terraform Setup</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <ul>
+<li>
+<p>Installed Terraform on terminal, following the steps in the given doc-
+<a href="https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started">Step-by-step guide on Terraform installation</a>
+<script src="https://asciinema.org/a/EQbv1VTWDamOOS6IhWEvcyf2y.js" id="asciicast-EQbv1VTWDamOOS6IhWEvcyf2y" async></script>
+</p>
+</li>
+<li>
+<p>Made a Docker container out of Terraform and locally hosted the Nginx image.</p>
+<ul>
+<li>Created a new directory.</li>
+<li>Initialized Terraform in it by using <code>terraform init</code> command.</li>
+<li>Created main.tf file. Specified resources and providers there.</li>
+<li>Finally ran the image on LocalHost:8000
+![Nginx Image hosted using Terraform](/posts/Daily Updates/nginxsiteterraformday11.PNG)</li>
+<li>Learnt some of the basic Terraform commands like <code>plan</code>, <code>apply</code> , <code>destroy</code> along the way.
+<ul>
+<li><code>plan</code> does a dry run of your configuration and tell you what all chanes would be applied once you use <code>terraform apply</code>.</li>
+<li><code>apply</code> deploys the changes according to final state of main.tf file, compared to earlier changes.</li>
+<li><code>destroy</code> destroys the whole infrastructure created till the point.</li>
+<li>Got a basic understanding of how declarative mode of programming works.
+<script src="https://asciinema.org/a/GYxglIjUsJDgQxNLfIZqNXxp0.js" id="asciicast-GYxglIjUsJDgQxNLfIZqNXxp0" async></script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Installed Terraform extension on my Visual Studio code as well.</p>
+</li>
+<li>
+<p><code>terraform apply --auto-approve</code> skips the task of responding <code>yes</code>, which recurrs while executing <code>terraform apply</code>.</p>
+</li>
+<li>
+<p>Discovered that two new files, <code>terraform.tfstate</code> and <code>terraform.tfstate.backup</code> are created on initializing terraform in a directory.
+<script src="https://asciinema.org/a/kiWSf61ZVE1hmjY0FucJt1lqI.js" id="asciicast-kiWSf61ZVE1hmjY0FucJt1lqI" async></script>
+</p>
+</li>
+<li>
+<p>References:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=l5k1ai_GBDE">Introduction to Terraform</a></li>
+<li><a href="https://www.youtube.com/watch?v=6RAQynw2Sy8">Understanding declarative and imperative programming</a></li>
+<li><a href="https://www.youtube.com/watch?v=SLB_c_ayRMo">Automate your AWS Cloud Infrastructure using Terraform, right from scratch</a></li>
+<li><a href="https://www.youtube.com/watch?v=SLB_c_ayRMo&amp;t=5847s">Automating your AWS Cloud Infrastructure</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/SatwikVats/SatwikVats.github.io/edit/master/content/posts%5cWorking%20with%20Cloud%5cTerraform%20coming%20into%20picture%5cusing_terraform.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/working-with-cloud/aws-command-line-interface/s3/" title="S3 Storage Buckets" class="btn btn-outline-info">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">S3 Storage Buckets</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/working-with-cloud/terraform-coming-into-picture/vms/" title="VMs" class="btn btn-outline-info">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">VMs</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>

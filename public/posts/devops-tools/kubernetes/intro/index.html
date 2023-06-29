@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Knets_content</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+
+
+<meta property="og:title" content="Knets_content" />
+<meta property="og:description" content="Kubernetes   Spent some time on learning about Kubernetes.
+ Its utility as a Container Management Tool. Procedure of installation via three nodes- one master along with two slave nodes.    Started working around with Kubernetes.
+  Made a directory kubernetesinstallation for storing private keys.
+  Created a VM to be used as a Master Node for my Kubernetes installation process.
+aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://satwikvats.github.io/posts/devops-tools/kubernetes/intro/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-08T06:00:20&#43;06:00" />
+<meta property="article:modified_time" content="2020-06-08T06:00:20&#43;06:00" />
+
+
+
+    
+    
+<meta name="description" content="Knets_content" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      Know me better..</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/hugo/" title="Hugo">Hugo</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/netlify/" title="Netlify">Netlify</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/working-with-cloud/">Cloud Computing</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/introduction-to-cloud-computing/" title="Introduction to Cloud Computing">Introduction to Cloud Computing</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/working-with-cloud/aws-command-line-interface/">AWS CLI</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/ec2/" title="EC2">EC2</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/vpc/" title="vpc">vpc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/key-pair/" title="Key-pair">Key-pair</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/aws-command-line-interface/s3/" title="S3 Storage Buckets">S3 Storage Buckets</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/">Terraform</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/using_terraform/" title="Terraform Setup">Terraform Setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/vms/" title="VMs">VMs</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/vpc/" title="Vpc">Vpc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/terraform-coming-into-picture/web-server/" title="web-server">web-server</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/working-with-cloud/walkthrough-of-aws/" title="Walkthrough of AWS">Walkthrough of AWS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/devops-tools/">Devops</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/devops-tools/ansible/">Ansible</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/ansible/ansibleconfig/" title="Ansible Config">Ansible Config</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/devops-tools/kubernetes/">Kubernetes</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/devops-tools/kubernetes/intro/" title="Knets_content">Knets_content</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/devops-tools/ci-cd/">CI/CD</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/ci-cd/circleci/" title="Circle CI">Circle CI</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/devops-tools/ci-cd/github-actions/" title="Github Actions">Github Actions</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/docker_category/">Docker</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/installation/" title="Introduction to Docker">Introduction to Docker</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/working-with-containers/" title="Working with Containers">Working with Containers</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/hosting-nginx-image/" title="Hosting Nginx Image">Hosting Nginx Image</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/docker_category/hosting-hugo-site-in-a-docker-environment/" title="Hosting a Hugo Site in Docker Environment">Hosting a Hugo Site in Docker Environment</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/github/">Github</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/github/about-github/" title="About Github">About Github</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/github/github-pages/" title="Github Pages">Github Pages</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/github/git/">Git</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/github/git/basic_commands/" title="Git">Git</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/linux/">Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/linux/asciinema/" title="Asciinema">Asciinema</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/linux/basic-commands/" title="Basic Commands">Basic Commands</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/linux/oracle-virtualbox/" title="Oracle Virtualbox">Oracle Virtualbox</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://satwikvats.github.io/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/default-avatar_hu1b14593c51b09e0fcd18693678a8f4ed_42371_120x120_fit_box_2.png' alt="Author Image">
+          <h5 class="author-name"></h5>
+          <p>June 8, 2020</p>
+        </div>
+
+        <div class="title">
+          <h1>Knets_content</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <h1 id="kubernetes">Kubernetes</h1>
+<ul>
+<li>
+<p>Spent some time on learning about Kubernetes.</p>
+<ul>
+<li>Its utility as a Container Management Tool.</li>
+<li>Procedure of installation via three nodes- one master along with two slave nodes.</li>
+</ul>
+</li>
+<li>
+<p>Started working around with Kubernetes.</p>
+<ul>
+<li>
+<p>Made a directory <code>kubernetesinstallation</code> for storing private keys.</p>
+</li>
+<li>
+<p>Created a VM to be used as a Master Node for my Kubernetes installation process.</p>
+<pre><code>aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro
+
+</code></pre><script src="https://asciinema.org/a/TBAH4doSotdyhEBFSANzBPLvi.js" id="asciicast-TBAH4doSotdyhEBFSANzBPLvi" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>First attempt to connect to my Master Node using SSH.</p>
+<ul>
+<li>
+<p>Attempted connecting to my Master Node VM via SSH client but failed to do so, since my connection timed out.</p>
+<pre><code>ssh -i masternodessh.pem ubuntu@ec2-13-234-225-150.ap-south-1.compute.amazonaws.com
+
+</code></pre></li>
+<li>
+<p>To make sure that my private key is not publicly visible, used the following command. Also, the private key file can be downloaded just once and make sure that its in the same directory as your
+working directory.</p>
+<pre><code>chmod 400 masternodessh.pem
+
+</code></pre><script src="https://asciinema.org/a/yQUixrAIOoGu3Nf8yjlUQ1lSe.js" id="asciicast-yQUixrAIOoGu3Nf8yjlUQ1lSe" async></script>
+
+</li>
+<li>
+<p>Tried connecting using Ec2 Instance Connect but failed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Second attempt to connect to my Master Node using SSH.</p>
+<ul>
+<li>
+<p>Terminated the previous instance and created a new one with subnet and security group.</p>
+<pre><code>aws ec2 run-instances --image-id ami-0c1a7f89451184c8b --count 1 --key-name masternodessh --instance-type t2.micro --security-group-ids  --subnet-id subnet-0d373cd18c07e0145
+
+</code></pre><script src="https://asciinema.org/a/qvkGqhecwLzaxOz7akOraX1s2.js" id="asciicast-qvkGqhecwLzaxOz7akOraX1s2" async></script>
+
+</li>
+<li>
+<p>Failed to connect via SSH. Later realised that my instance was linked to a private subnet and hence, I didn&rsquo;t get a public DNS.</p>
+<pre><code>ssh -i &quot;masternodessh.pem&quot; ubuntu@10.0.1.84
+
+</code></pre><script src="https://asciinema.org/a/ya23FcocfqeeplwOWeWatdiJi.js" id="asciicast-ya23FcocfqeeplwOWeWatdiJi" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>Third attempt to connect to my Master Node using SSH.</p>
+<ul>
+<li>
+<p>Attached an internet Gateway.</p>
+<pre><code>aws ec2 attach-internet-gateway --internet-gateway-id igw-014783f25b2794337 --vpc-id vpc-0e595b592d80b7cf4
+
+</code></pre></li>
+<li>
+<p>Enabled DNS hostnames in VPC settings and &lsquo;auto-assign IPV4 address&rsquo; in the Subnet settings to &lsquo;yes&rsquo;.</p>
+</li>
+<li>
+<p>Terminated the previous instance and created a new one with same subnet and security group.
+<script src="https://asciinema.org/a/lS26m0pGw27oVeLmjGhObPPKF.js" id="asciicast-lS26m0pGw27oVeLmjGhObPPKF" async></script>
+</p>
+</li>
+<li>
+<p>Failed again, despite managing to get a public DNS.
+<script src="https://asciinema.org/a/HfG8cOfYQr1oosPfgZ5J9sdMN.js" id="asciicast-HfG8cOfYQr1oosPfgZ5J9sdMN" async></script>
+</p>
+</li>
+<li>
+<p>Attempted deploying Kubernetes cluster by following this <a href="https://www.youtube.com/watch?v=ndNKI5GBdd0">tutorial</a>.</p>
+</li>
+<li>
+<p>Created a Master Node and established SSH connection.
+<script src="https://asciinema.org/a/0YGqVFaWcGh5q2mth9Jc7QM86.js" id="asciicast-0YGqVFaWcGh5q2mth9Jc7QM86" async></script>
+</p>
+</li>
+<li>
+<p>Installed AWS CLI and configured with my credentials.</p>
+</li>
+<li>
+<p>To mask-off highly confidential credentials like secret access key on terminal, we may use the following commands.</p>
+<pre><code>#Any user input provided on terminal is rendered invisible.
+stty -echo
+
+</code></pre><pre><code>#To return back to normal mode.
+stty echo
+
+</code></pre><script src="https://asciinema.org/a/PvjCw5Z1LeD9njd80xrgolOk4.js" id="asciicast-PvjCw5Z1LeD9njd80xrgolOk4" async></script>
+
+</li>
+<li>
+<p>Installed all the necessary packages including kubectl.</p>
+<pre><code>curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '&quot;' -f 4)/kops-lin
+ux-amd64
+chmod +x kops-linux-amd64
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+</code></pre></li>
+<li>
+<p>Started exploring about Route 53 since it was required in this method.
+<script src="https://asciinema.org/a/WjzKnHwDTg7I7DOwhWaejHR7g.js" id="asciicast-WjzKnHwDTg7I7DOwhWaejHR7g" async></script>
+</p>
+</li>
+<li>
+<p>Since I found a simpler approach, terminated this instance and started afresh.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Attempted deploying Kubernetes cluster by following this <a href="https://www.youtube.com/watch?v=vpEDUmt_WKA">tutorial</a>.</p>
+<ul>
+<li>
+<p>Created three VMs to be used as nodes- One Matser, Two Slaves.</p>
+</li>
+<li>
+<p>Started off by installing packages on the Master Node.</p>
+<ul>
+<li>Installed Docker. Referred to <a href="https://docs.docker.com/engine/install/ubuntu/">official documentation</a> for the same.
+<pre><code>#Importing some necessary certificates.
+sudo apt-get install \ 
+&gt;     apt-transport-https \ 
+&gt;     ca-certificates \ 
+&gt;     curl \ 
+&gt;     gnupg \ 
+&gt;     lsb-release
+
+sudo apt  install docker.io  # version 20.10.2-0ubu
+
+docker --version
+
+</code></pre></li>
+<li>Imported a gtg key.
+<pre><code>sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo &quot;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&quot; | sudo tee/etc/apt/sources.list.d/kubernetes.list
+
+</code></pre></li>
+<li>Installed kubelet, kubeadm and kubectl.
+<pre><code>sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+</code></pre></li>
+<li>Enabled the use of IP-tables.
+<pre><code>echo &quot;net.bridge.bridge-nf-call-iptables=1&quot; | sudo tee -a /etc/sysctl.conf 
+sudo sysctl -p
+
+</code></pre><script src="https://asciinema.org/a/VXnh3KJmjMsIAlnkrp3Cx80XB.js" id="asciicast-VXnh3KJmjMsIAlnkrp3Cx80XB" async></script>
+
+</li>
+</ul>
+</li>
+<li>
+<p>Repeated the same process for Worker Nodes one and two.
+<script src="https://asciinema.org/a/aw3qRrxiRGhWODfrDoIf4eAkK.js" id="asciicast-aw3qRrxiRGhWODfrDoIf4eAkK" async></script>
+</p>
+</li>
+<li>
+<p>Since the nodes were ready with all the required packages, attempted to initialize the cluster.</p>
+</li>
+<li>
+<p>Failed since the RAM of Master node was less than the required 1700 MB.</p>
+<pre><code>sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+</code></pre><script src="https://asciinema.org/a/0dntls4e0TOs8mWyouz39LAcW.js" id="asciicast-0dntls4e0TOs8mWyouz39LAcW" async></script>
+
+</li>
+<li>
+<p>Teminated the Master Node with instance-type <code>t2.micro</code> and created a new one with type as <code>t2.medium</code>.</p>
+</li>
+<li>
+<p>Repeated the process all over for the VM with improved RAM.
+<script src="https://asciinema.org/a/RQNLMi8iHVYwf4nG9MLx8rOB3.js" id="asciicast-RQNLMi8iHVYwf4nG9MLx8rOB3" async></script>
+</p>
+</li>
+<li>
+<p>Successfully initialized cluster in the Master Node this time.</p>
+<pre><code>#Initializing the cluster.
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+#Created a security policy for pods.
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+</code></pre></li>
+<li>
+<p>Nodes can be viewed using th following command.</p>
+<pre><code>kubectl get nodes
+
+#Watch allows you to automatically repeat a command. It keeps refreshing the node-list every 2 secs.
+watch kubectl get nodes
+
+</code></pre><script src="https://asciinema.org/a/0HuQ5afgqCQWsznuaTZkZJZfk.js" id="asciicast-0HuQ5afgqCQWsznuaTZkZJZfk" async></script>
+
+</li>
+<li>
+<p>Tried attaching Worker Node 1 to cluster, but failed.</p>
+<pre><code>sudo kubeadm join 172.31.37.108:6443 --token y5zv1x.8sr3g843mgi3gj72 \ 
+&gt; --discovery-token-ca-cert-hash sha256:b789f80fbcd5b2c6b6b6f795e648ec3b27aa1052652edfc712dbaecf6070050e 
+
+</code></pre><script src="https://asciinema.org/a/RDDR2gWYaPalwFjHMERWeO1g8.js" id="asciicast-RDDR2gWYaPalwFjHMERWeO1g8" async></script>
+
+</li>
+<li>
+<p>Tried the same for Worker Node 2, but a different error showed up this time.
+<script src="https://asciinema.org/a/dDmP5cY12UQLzCMvZ8OqJ97lc.js" id="asciicast-dDmP5cY12UQLzCMvZ8OqJ97lc" async></script>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Spent some time in debugging previous day&rsquo;s error.</p>
+</li>
+<li>
+<p>Deep-dived into some of the fundamental aspects of cloud computing such as VM, subnets, VPCs and Security Groups.</p>
+</li>
+<li>
+<p>Started learning about EKS Cluster and its deployment method.</p>
+</li>
+<li>
+<p>Started working with EKS, following the official <a href="https://learn.hashicorp.com/tutorials/terraform/eks">Hashicorp documentation</a></p>
+<ul>
+<li>
+<p>Cloned the following directory.</p>
+<pre><code>git clone https://github.com/hashicorp/learn-terraform-provision-eks-cluster
+
+</code></pre></li>
+<li>
+<p>Configured AWS in the given directroy.</p>
+</li>
+<li>
+<p>The directory has various terraform files.</p>
+<ul>
+<li>
+<p><code>eks-cluster.tf</code>: It provisions all the resources required to setup EKS cluster.</p>
+</li>
+<li>
+<p><code>kubernetes-dashboard-admin.rbac.yaml</code>: It creates cluster binding and connects API.</p>
+</li>
+<li>
+<p><code>kubernetes.tf</code>: Provisions Kubernetes as a provider along with host and token.</p>
+</li>
+<li>
+<p><code>outputs.tf</code>: Defines output configuartion.</p>
+</li>
+<li>
+<p><code>README.md</code>: Default Readme file.</p>
+</li>
+<li>
+<p><code>security-groups.tf</code>: Provisions all the sercurity groups to be used by EKS cluster.</p>
+</li>
+<li>
+<p><code>versions.tf</code>: Sets the latest Terraform version.</p>
+</li>
+<li>
+<p><code>vpc.tf</code>: Provisions a VPC along with subnets and availability zones.</p>
+</li>
+</ul>
+<script src="https://asciinema.org/a/VrctJSMSRmJYDO7iqX3fhEWve.js" id="asciicast-VrctJSMSRmJYDO7iqX3fhEWve" async></script>
+
+</li>
+<li>
+<p>Initialized Terraform of the latest version in the directory.</p>
+<pre><code>terraform init -upgrade
+
+</code></pre></li>
+<li>
+<p>Used <code>terraform plan</code> to analyze the cluster infrastructure changes.
+<script src="https://asciinema.org/a/VpTwxfmoChNVUfT8rNT9AGr91.js" id="asciicast-VpTwxfmoChNVUfT8rNT9AGr91" async></script>
+</p>
+</li>
+<li>
+<p>Attempted deploying the cluster using <code>terraform apply</code>, but failed since IAM permissions weren&rsquo;t granted.
+<script src="https://asciinema.org/a/LRMzaLh5jyfUIuepa0wFblC7j.js" id="asciicast-LRMzaLh5jyfUIuepa0wFblC7j" async></script>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>References-</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=l_lWfipUimk">Kubernetes for beginners</a></li>
+<li><a href="https://www.youtube.com/watch?v=ndNKI5GBdd0">Kubernetes setup</a></li>
+<li><a href="https://www.youtube.com/watch?v=vpEDUmt_WKA">Deploy Kubernetes from scratch</a></li>
+<li><a href="https://learn.hashicorp.com/tutorials/terraform/eks">Provisioning an EKS Cluster</a></li>
+<li><a href="https://www.youtube.com/watch?v=p6xDCz00TxU">Creating an EKS Cluster</a></li>
+<li><a href="https://www.youtube.com/watch?v=dH0yz-Osy54">Basics of Cloud Computing</a></li>
+<li><a href="https://learn.hashicorp.com/tutorials/terraform/eks">Provisioning an EKS Cluster</a></li>
+<li><a href="https://stackoverflow.com/questions/20941704/ec2-instance-has-no-public-dns">Possible reasons for not getting a public DNS for SSH client</a></li>
+<li><a href="https://www.youtube.com/watch?v=8UqtMcX_kg0">SSH to EC2 Instances using Linux or Mac Tutorial</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/SatwikVats/SatwikVats.github.io/edit/master/content/posts%5cDevops%20Tools%5cKubernetes%5cintro.md" title="Improve this page" target="_blank" rel="noopener">
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/devops-tools/ansible/ansibleconfig/" title="Ansible Config" class="btn btn-outline-info">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">Ansible Config</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/devops-tools/ci-cd/circleci/" title="Circle CI" class="btn btn-outline-info">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Circle CI</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents"></nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+  </body>
+</html>
