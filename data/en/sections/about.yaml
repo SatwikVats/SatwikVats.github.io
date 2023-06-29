@@ -6,17 +6,13 @@ section:
   showOnNavbar: true
   template: sections/about.html
 
-
-
 company:
   name: Birla Institute of Technology & Science
-  url: 'https://www.bits-pilani.ac.in/'
+  url: "https://www.bits-pilani.ac.in/"
 
-summary: 'I am a final year student, pursuing my Bachelor’s Degree in Electronics & Instrumentation at BITS Pilani, Pilani campus. A curious mind always willing to learn and acquire new skills, I aspire to become a software developer one day.'
+summary: "I have recently completed my Bachelor’s Degree in Electronics & Instrumentation from BITS Pilani, Pilani campus. A self-drive curious mind always willing to learn and acquire new skills, look forward to break into the indusrty in technical domain. "
 
-
-designation: Student
-
+designation: Fresher
 
 socialLinks:
   - name: Email
@@ -24,17 +20,13 @@ socialLinks:
     url: vats.satwik@gmail.com
   - name: Github
     icon: fab fa-github
-    url: 'https://www.github.com/SatwikVats'
+    url: "https://www.github.com/SatwikVats"
   - name: LinkedIn
     icon: fab fa-linkedin
-    url: 'https://www.linkedin.com/in/satwikvats'
-  - name: Geeks for Geeks
-    icon: /images/sections/about/geeksforgeeks.png
-    url: 'https://auth.geeksforgeeks.org/user/f2019rx8l'
+    url: "https://www.linkedin.com/in/satwikvats"
   - name: Leetcode
-    icon: /images/sections/about/leetcode.png
-    url: 'https://leetcode.com/f20190194/'
-
+    icon: fab fa-square-code
+    url: "https://leetcode.com/Tyson_blaze09/"
 
 resume: "files/resume.pdf"
 
@@ -57,11 +49,8 @@ softSkills:
   - name: Hard Working
     percentage: 80
     color: green
-
 #badges:
-  #- type: certification
-  #  name: Python Specialization | University of Michigan
-  #  url: "https://www.coursera.org/account/accomplishments/certificate/DY7U92XYASMJ"
-
-
+#- type: certification
+#  name: Python Specialization | University of Michigan
+#  url: "https://www.coursera.org/account/accomplishments/certificate/DY7U92XYASMJ"
 
