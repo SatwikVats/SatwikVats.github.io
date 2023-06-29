@@ -12,7 +12,7 @@ company:
 
 summary: "I have recently completed my Bachelor’s Degree in Electronics & Instrumentation from BITS Pilani, Pilani campus. A self-drive curious mind always willing to learn and acquire new skills, look forward to break into the indusrty in technical domain. "
 
-designation: Fresher
+designation: Recent Graduate
 
 socialLinks:
   - name: Email
@@ -25,7 +25,7 @@ socialLinks:
     icon: fab fa-linkedin
     url: "https://www.linkedin.com/in/satwikvats"
   - name: Leetcode
-    icon: fab fa-square-code
+    icon: fab fa-code
     url: "https://leetcode.com/Tyson_blaze09/"
 
 resume: "files/resume.pdf"
