@@ -2,6 +2,7 @@
 section:
   name: Projects
   id: projects
+  template: sections/projects.html
   enable: true
   weight: 5
   showOnNavbar: false
