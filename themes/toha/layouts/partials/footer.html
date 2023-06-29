@@ -66,7 +66,7 @@
           <h5>{{ i18n "navigation" }}</h5>
           {{ if $sections }}
           <ul>
-            {{- range sort $sections "section.weight" }}
+            <!--{{- range sort $sections "section.weight" }}-->
               {{ if and (.section.enable) (.section.showOnNavbar)}}
                 {{ $sectionID := replace (lower .section.name) " " "-"  }}
                 {{ if .section.id }}
