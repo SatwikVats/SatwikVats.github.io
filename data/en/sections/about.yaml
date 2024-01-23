@@ -7,12 +7,12 @@ section:
   template: sections/about.html
 
 company:
-  name: Birla Institute of Technology & Science
-  url: "https://www.bits-pilani.ac.in/"
+  name: Alts Wealth Pvt Ltd
+  url: "https://altswealth.com/about-us.html"
 
-summary: "I have recently completed my Bachelor’s Degree in Electronics & Instrumentation from BITS Pilani, Pilani campus. A self-drive curious mind always willing to learn and acquire new skills, look forward to break into the indusrty in technical domain. "
+summary: "I have recently completed my Bachelor’s Degree in Electronics & Instrumentation from BITS Pilani (2023 graduate) and have ventured into the industry as a FullStack Developer for the past 6 months. "
 
-designation: Recent Graduate
+designation: FullStack Developer
 
 socialLinks:
   - name: Email
